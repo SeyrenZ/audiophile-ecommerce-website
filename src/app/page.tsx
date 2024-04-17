@@ -1,5 +1,5 @@
-import Home from "@/components/home/home-header";
-import HomeProduct from "@/components/home/home-product";
+import Home from "@app/components/home/home-header";
+import HomeProduct from "@app/components/home/home-product";
 
 export default function page() {
   return (
