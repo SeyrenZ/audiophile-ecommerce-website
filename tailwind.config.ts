@@ -19,7 +19,9 @@ const config = {
     },
     extend: {
       backgroundImage: {
-        HeaderBg: "url('/home-header-background.svg')",
+        HomeHeaderBg: "url('/home-header-background.svg')",
+        HomeHeaderBgTablet: "url('/home-header-background-tablet.svg')",
+        HomeHeaderBgMobile: "url('/home-header-background-mobile.svg')",
       },
       colors: {
         border: "hsl(var(--border))",

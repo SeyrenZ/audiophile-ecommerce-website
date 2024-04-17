@@ -15,11 +15,11 @@ const Navbar = () => {
     { title: "Earphones", href: "#" },
   ];
   return (
-    <div className="w-full h-auto px-10 fixed z-50">
-      <nav className="w-full py-8 max-w-[1110px] mx-auto bg-transparent border-b-[1px] border-zinc-700 flex items-center justify-between relative">
+    <div className="w-full h-auto sm:px-10 fixed z-50">
+      <nav className="w-full sm:px-0 px-6 py-8 max-w-[1110px] mx-auto bg-transparent border-b-[1px] border-zinc-700 flex items-center justify-between relative">
         <Logo />
 
-        <div className="w-full max-w-[429px] absolute left-0 right-0 mx-auto lg:flex sm:hidden items-center gap-x-[34px]  ">
+        <div className="w-full max-w-[429px] absolute left-0 right-0 mx-auto lg:flex hidden items-center gap-x-[34px]  ">
           {links.map((link, index) => (
             <Link
               key={index}
