@@ -1,9 +1,10 @@
-import { HomeHeader } from "@/components";
+import Home from "@/components/home/home-header";
+import HomeProduct from "@/components/home/home-product";
 
-export default function Home() {
+export default function page() {
   return (
     <main>
-      <HomeHeader />
+      <Home />
     </main>
   );
 }
