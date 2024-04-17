@@ -1,7 +1,7 @@
-import Home from "@app/components/home/home-header";
+import HomeHeader from "@app/components/home/home-header";
 import HomeProduct from "@app/components/home/home-product";
 
-export default function page() {
+export default function Home() {
   return (
     <main>
       <Home />

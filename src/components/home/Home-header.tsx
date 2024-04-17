@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const Home = () => {
+const HomeHeader = () => {
   return (
     <div className="w-full h-auto bg-[#141414]">
       <div className="w-full max-w-[1110px] mx-auto sm:h-[729px] h-[600px] lg:bg-HomeHeaderBg sm:bg-HomeHeaderBgTablet bg-HomeHeaderBgMobile bg-cover bg-center bg-no-repeat flex items-center lg:justify-start justify-center relative">
@@ -34,4 +34,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeHeader;
