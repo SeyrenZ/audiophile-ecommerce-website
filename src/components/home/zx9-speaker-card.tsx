@@ -4,7 +4,11 @@ import Link from "next/link";
 
 const ZX9SpeakerCard = () => {
   return (
-    <div className="w-full flex flex-col gap-y-12">
+    <div
+      className="w-full flex flex-col gap-y-12"
+      data-aos="fade-right"
+      data-aos-duration="500"
+    >
       <div className="relative w-full lg:h-[560px] sm:h-[720px] h-[600px] lg:pt-[98px] lg:pb-0 sm:pt-12 sm:pb-16 py-12 sm:px-32 px-5 bg-primary-copper rounded-lg flex lg:flex-row flex-col items-center justify-between overflow-hidden group">
         <div className="z-0 absolute w-full inset-0 lg:bg-HomeProductDesktopProps sm:bg-HomeProductTabletProps bg-HomeProductMobileProps lg:bg-left bg-top bg-no-repeat group-hover:scale-105 transition ease-in-out duration-700 " />
         <Image

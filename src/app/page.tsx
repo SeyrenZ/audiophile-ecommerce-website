@@ -1,8 +1,15 @@
+"use client";
 import AboutUs from "@app/components/home/about-us";
 import HomeHeader from "@app/components/home/home-header";
 import HomeProduct from "@app/components/home/home-product";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function Home() {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <main>
       <HomeHeader />

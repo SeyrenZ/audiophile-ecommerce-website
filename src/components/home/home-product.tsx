@@ -49,13 +49,19 @@ const HomeProduct = () => {
     <div className="w-full h-auto lg:px-0 sm:px-10 px-6 pt-[120px]">
       <div className="w-full max-w-[1110px] mx-auto flex flex-col lg:gap-y-[168px] sm:gap-y-[96px] gap-y-[120px]">
         <div className="w-full flex sm:flex-row flex-col items-center sm:justify-between sm:gap-y-0 gap-y-4">
-          <ProductCard
-            title="HEADPHONES"
-            href="#"
-            image={<XX99HeadphonesMarkI />}
-          />
-          <ProductCard title="SPEAKER" href="#" image={<ZX9Speaker />} />
-          <ProductCard title="HEADPHONES" href="#" image={<YX1Earphones />} />
+          <div data-aos="fade-up" data-aos-duration="900">
+            <ProductCard
+              title="HEADPHONES"
+              href="#"
+              image={<XX99HeadphonesMarkI />}
+            />
+          </div>
+          <div data-aos="fade-up" data-aos-duration="700">
+            <ProductCard title="SPEAKER" href="#" image={<ZX9Speaker />} />
+          </div>
+          <div data-aos="fade-up" data-aos-duration="500">
+            <ProductCard title="HEADPHONES" href="#" image={<YX1Earphones />} />
+          </div>
         </div>
         <div className="flex flex-col lg:gap-y-12 sm:gap-y-[32px] gap-y-6">
           <ZX9SpeakerCard />
