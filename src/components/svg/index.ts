@@ -5,3 +5,6 @@ export { default as ZX9Speaker } from "./zx9-speaker.svg";
 export { default as CartIcon } from "./cart-icon.svg";
 export { default as ProductShadow } from "./product-shadow.svg";
 export { default as ArrowRight } from "./arrow-right.svg";
+export { default as FacebookIcon } from "./facebook-icon.svg";
+export { default as TwitterIcon } from "./twitter-icon.svg";
+export { default as InstagramIcon } from "./instagram-icon.svg";
