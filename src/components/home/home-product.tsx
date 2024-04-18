@@ -18,7 +18,7 @@ const ProductCard = ({ title, image, href }: ProductDetail) => {
   return (
     <Link
       href={href}
-      className="lg:w-[350px] sm:w-[223px] w-[350px] h-[284px] hover:scale-110 flex items-center justify-center relative transition ease-in-out duration-500"
+      className="lg:w-[350px] sm:w-[223px] w-[350px] h-[284px] hover:scale-105 flex items-center justify-center relative transition ease-in-out duration-500 group"
     >
       <div className="w-full h-full flex flex-col items-center gap-y-12 z-10">
         <div className="w-full h-[50%] flex items-center justify-center relative">
@@ -29,7 +29,7 @@ const ProductCard = ({ title, image, href }: ProductDetail) => {
           <div className="text-lg font-bold text-black tracking-widest">
             {title}
           </div>
-          <div className="text-zinc-600 font-bold text-[13px] tracking-[1px] flex items-center gap-x-3">
+          <div className="text-zinc-600 group-hover:text-primary-copper font-bold text-[13px] tracking-[1px] flex items-center gap-x-3 transition ease-in-out duration-300">
             SHOP
             <ArrowRight />
           </div>

@@ -36,7 +36,7 @@ const Navbar = () => {
             <Link
               key={index}
               href={link.href}
-              className="text-[13px] leading-[25px] font-medium text-white tracking-[2px] uppercase"
+              className="text-[13px] leading-[25px] font-medium text-white hover:text-primary-copper tracking-[2px] uppercase transition ease-in-out duration-300"
             >
               {link.title}
             </Link>
