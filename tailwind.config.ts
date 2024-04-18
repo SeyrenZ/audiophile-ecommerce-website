@@ -1,3 +1,4 @@
+import { YX1Earphones } from "@app/components/svg";
 import type { Config } from "tailwindcss";
 
 const config = {
@@ -28,6 +29,8 @@ const config = {
         ZX7SpeakerBgDesktop: "url('/zx7-speaker-background-desktop.svg')",
         ZX7SpeakerBgTablet: "url('/zx7-speaker-background-tablet.svg')",
         ZX7SpeakerBgMobile: "url('/zx7-speaker-background-mobile.svg')",
+        YX1EarphonesHero: "url('/yx1-earphones-hero.svg')",
+        YX1EarphonesHeroTablet: "url('/yx1-earphones-hero-tablet.svg')",
       },
       colors: {
         border: "hsl(var(--border))",
