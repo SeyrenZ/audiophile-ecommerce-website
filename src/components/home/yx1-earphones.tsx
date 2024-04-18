@@ -8,7 +8,7 @@ const YX1EarphonesCard = () => {
       <div className="w-full max-w-[540px] sm:h-[320px] h-[200px] rounded-lg relative overflow-hidden">
         <div className="absolute inset-0 w-full lg:bg-YX1EarphonesHero sm:bg-YX1EarphonesHeroTablet bg-YX1EarphonesHero bg-cover group-hover:scale-110 transition ease-in-out duration-700" />
       </div>
-      <div className="w-full max-w-[540px] sm:h-[320px] h-[200px] rounded-lg flex items-center justify-center bg-primary-lightGray">
+      <div className="w-full max-w-[540px] sm:h-[320px] h-[200px] rounded-lg flex items-center justify-center bg-primary-whiteSmoke">
         <div className="flex flex-col items-start gap-y-8">
           <div className="text-[28px] font-bold tracking-[2px]">
             YX1 EARPHONES

@@ -39,16 +39,16 @@ const ProductCard = ({ title, image, href }: ProductDetail) => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 w-full h-[204px] rounded-lg bg-primary-lightGray z-0" />
+      <div className="absolute bottom-0 w-full h-[204px] rounded-lg bg-primary-whiteSmoke z-0" />
     </Link>
   );
 };
 
 const HomeProduct = () => {
   return (
-    <div className="w-full h-auto sm:px-10 px-6 py-[120px]">
+    <div className="w-full h-auto lg:px-0 sm:px-10 px-6 pt-[120px]">
       <div className="w-full max-w-[1110px] mx-auto flex flex-col lg:gap-y-[168px] sm:gap-y-[96px] gap-y-[120px]">
-        <div className="w-full flex sm:flex-row flex-col items-center lg:gap-x-[30px] sm:gap-x-[10px] sm:gap-y-0 gap-y-4">
+        <div className="w-full flex sm:flex-row flex-col items-center sm:justify-between sm:gap-y-0 gap-y-4">
           <ProductCard
             title="HEADPHONES"
             href="#"
