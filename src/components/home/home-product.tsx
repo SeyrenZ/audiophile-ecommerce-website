@@ -18,7 +18,7 @@ const ProductCard = ({ title, image, href }: ProductDetail) => {
   return (
     <Link
       href={href}
-      className="w-[350px] h-[284px] hover:scale-110 flex items-center justify-center relative transition ease-in-out duration-500"
+      className="lg:w-[350px] sm:w-[223px] w-[350px] h-[284px] hover:scale-110 flex items-center justify-center relative transition ease-in-out duration-500"
     >
       <div className="w-full h-full flex flex-col items-center gap-y-12 z-10">
         <div className="w-full h-[50%] flex items-center justify-center relative">
@@ -42,8 +42,8 @@ const ProductCard = ({ title, image, href }: ProductDetail) => {
 
 const HomeProduct = () => {
   return (
-    <div className="w-full h-auto py-[120px]">
-      <div className="w-full max-w-[1110px] mx-auto flex justify-between">
+    <div className="w-full h-auto lg:px-0 sm:px-10 py-[120px]">
+      <div className="w-full max-w-[1110px] mx-auto flex sm:flex-row flex-col items-center lg:gap-x-[30px] sm:gap-x-[10px] sm:gap-y-0 gap-y-4">
         <ProductCard
           title="HEADPHONES"
           href="#"
