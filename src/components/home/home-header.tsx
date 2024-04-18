@@ -24,7 +24,7 @@ const HomeHeader = () => {
           </div>
           <Link
             href="#"
-            className="w-fit mt-5 px-8 py-[15px] bg-primary-copper hover:bg-primary-apricot text-[13px] text-white font-bold tracking-[1px]"
+            className="w-fit mt-5 px-8 py-[15px] bg-primary-copper hover:bg-primary-apricot text-[13px] text-white font-bold tracking-[1px] transition ease-in-out duration-300"
           >
             SEE PRODUCT
           </Link>
