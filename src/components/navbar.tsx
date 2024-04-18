@@ -20,7 +20,7 @@ const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
 
   return (
-    <div className="w-full h-auto sm:px-10 fixed z-50">
+    <div className="w-full h-auto sm:px-10 fixed z-50 backdrop-blur-sm">
       <nav className="w-full sm:px-0 pl-2 pr-6 sm:py-8 py-6 max-w-[1110px] mx-auto bg-transparent border-b-[1px] border-zinc-700 flex items-center justify-between relative">
         <div className="block lg:hidden">
           <Hamburger
