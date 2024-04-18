@@ -22,6 +22,12 @@ const config = {
         HomeHeaderBg: "url('/home-header-background.svg')",
         HomeHeaderBgTablet: "url('/home-header-background-tablet.svg')",
         HomeHeaderBgMobile: "url('/home-header-background-mobile.svg')",
+        HomeProductDesktopProps: "url('/home-product-props-desktop.svg')",
+        HomeProductTabletProps: "url('/home-product-props-tablet.svg')",
+        HomeProductMobileProps: "url('/home-product-props-mobile.svg')",
+        ZX7SpeakerBgDesktop: "url('/zx7-speaker-background-desktop.svg')",
+        ZX7SpeakerBgTablet: "url('/zx7-speaker-background-tablet.svg')",
+        ZX7SpeakerBgMobile: "url('/zx7-speaker-background-mobile.svg')",
       },
       colors: {
         border: "hsl(var(--border))",
