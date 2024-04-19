@@ -11,8 +11,8 @@ const Navbar = () => {
   };
 
   const links: Link[] = [
-    { title: "Home", href: "#" },
-    { title: "Headphones", href: "#" },
+    { title: "Home", href: "/" },
+    { title: "Headphones", href: "/headphones" },
     { title: "Speakers", href: "#" },
     { title: "Earphones", href: "#" },
   ];
