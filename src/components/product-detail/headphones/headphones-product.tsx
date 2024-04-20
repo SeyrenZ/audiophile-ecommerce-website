@@ -1,4 +1,5 @@
-import { ProductShadow2 } from "@app/components/svg";
+import AboutUs from "@app/components/about-us";
+import ProductLink from "@app/components/product-link";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

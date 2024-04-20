@@ -17,7 +17,7 @@ const ProductCard = ({ title, image, href }: ProductDetail) => {
   return (
     <Link
       href={href}
-      className="lg:w-[350px] sm:w-[223px] w-[350px] h-[284px] hover:scale-105 flex items-center justify-center relative transition ease-in-out duration-500 group"
+      className="lg:w-[350px] md:w-[259px] sm:w-[200px] w-[350px] h-[284px] hover:scale-105 flex items-center justify-center relative transition ease-in-out duration-500 group"
     >
       <div className="w-full h-full flex flex-col items-center gap-y-12 z-10">
         <div className="w-full h-[50%] flex items-center justify-center relative">
@@ -41,7 +41,10 @@ const ProductCard = ({ title, image, href }: ProductDetail) => {
 
 const ProductLink = () => {
   return (
-    <div className="w-full flex sm:flex-row flex-col items-center sm:justify-between sm:gap-y-0 gap-y-4">
+    <div
+      className="w-full max-w-[1110px] mx-auto
+     flex sm:flex-row flex-col items-center sm:justify-between sm:gap-y-0 gap-y-4 "
+    >
       <div data-aos="fade-up" data-aos-duration="900">
         <ProductCard
           title="HEADPHONES"
