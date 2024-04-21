@@ -34,7 +34,7 @@ const Navbar = () => {
     <>
       <div className="w-full h-auto absolute z-50 ">
         <div
-          className={`absolute w-full h-auto px:10 px-6 py-16 left-0 bg-white rounded-b-xl ${
+          className={`absolute w-full h-auto container py-16 left-0 bg-white rounded-b-xl ${
             isOpen
               ? "sm:translate-y-[25%] translate-y-[9.5%] opacity-100"
               : "translate-y-[-100%] opacity-0"
