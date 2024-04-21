@@ -8,7 +8,7 @@ const HomeHeader = () => {
         <div
           className="w-full h-full absolute inset-0 lg:bg-HomeHeaderBg sm:bg-HomeHeaderBgTablet bg-HomeHeaderBgMobile bg-cover bg-center bg-no-repeat"
           data-aos="fade-out"
-          data-aos-duration="1200"
+          data-aos-duration="2000"
         ></div>
         <div className="mt-16 flex flex-col lg:items-start items-center gap-y-7">
           <div
