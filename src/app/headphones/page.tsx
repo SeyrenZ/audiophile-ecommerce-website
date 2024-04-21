@@ -9,7 +9,9 @@ const Home = () => {
     <div className="sm:space-y-[160px] space-y-16">
       <HeadphonesHeader />
       <HeadphonesProduct />
-      <ProductLink />
+      <div className="container">
+        <ProductLink />
+      </div>
       <AboutUs />
     </div>
   );

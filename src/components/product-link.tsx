@@ -40,75 +40,73 @@ import {
 
 const ProductLink = () => {
   return (
-    <div className="container">
-      <div
-        className="w-full max-w-[1110px] mx-auto
-     flex sm:flex-row flex-col items-center sm:gap-x-[30px] sm:gap-y-0 gap-y-4 "
+    <div
+      className="w-full max-w-[1110px] mx-auto
+     flex sm:flex-row flex-col items-center lg:gap-x-[30px] gap-x-[10px] sm:gap-y-0 gap-y-4 "
+    >
+      <Link
+        href="#"
+        className="w-full max-w-[350px] h-[284px] hover:scale-105 flex items-center justify-center relative transition ease-in-out duration-500 group"
       >
-        <Link
-          href="#"
-          className="w-full max-w-[350px] h-[284px] hover:scale-105 flex items-center justify-center relative transition ease-in-out duration-500 group"
-        >
-          <div className="w-full h-full flex flex-col items-center gap-y-12 z-10">
-            <div className="w-full h-[50%] flex items-center justify-center relative">
-              <XX99HeadphonesMarkI />
-              <ProductShadow className="absolute bottom-[-50px] right-0 left-0 mx-auto" />
+        <div className="w-full h-full flex flex-col items-center gap-y-12 z-10">
+          <div className="w-full h-[50%] flex items-center justify-center relative">
+            <XX99HeadphonesMarkI />
+            <ProductShadow className="absolute bottom-[-50px] right-0 left-0 mx-auto" />
+          </div>
+          <div className="flex flex-col items-center gap-y-4 relative z-0">
+            <div className="text-lg font-bold text-black tracking-widest">
+              HEADPHONES
             </div>
-            <div className="flex flex-col items-center gap-y-4 relative z-0">
-              <div className="text-lg font-bold text-black tracking-widest">
-                HEADPHONES
-              </div>
-              <div className="text-zinc-600 group-hover:text-primary-copper font-bold text-[13px] tracking-[1px] flex items-center gap-x-3 transition ease-in-out duration-300">
-                SHOP
-                <ArrowRight />
-              </div>
+            <div className="text-zinc-600 group-hover:text-primary-copper font-bold text-[13px] tracking-[1px] flex items-center gap-x-3 transition ease-in-out duration-300">
+              SHOP
+              <ArrowRight />
             </div>
           </div>
-          <div className="absolute bottom-0 z-0 w-full lg:h-[204px] h-[165px] rounded-lg bg-primary-whiteSmoke"></div>
-        </Link>
-        <Link
-          href="#"
-          className="w-full max-w-[350px] h-[284px] hover:scale-105 flex items-center justify-center relative transition ease-in-out duration-500 group"
-        >
-          <div className="w-full h-full flex flex-col items-center gap-y-12 z-10">
-            <div className="w-full h-[50%] flex items-center justify-center relative">
-              <ZX9Speaker />
-              <ProductShadow className="absolute bottom-[-50px] right-0 left-0 mx-auto" />
+        </div>
+        <div className="absolute bottom-0 z-0 w-full lg:h-[204px] h-[165px] rounded-lg bg-primary-whiteSmoke"></div>
+      </Link>
+      <Link
+        href="#"
+        className="w-full max-w-[350px] h-[284px] hover:scale-105 flex items-center justify-center relative transition ease-in-out duration-500 group"
+      >
+        <div className="w-full h-full flex flex-col items-center gap-y-12 z-10">
+          <div className="w-full h-[50%] flex items-center justify-center relative">
+            <ZX9Speaker />
+            <ProductShadow className="absolute bottom-[-50px] right-0 left-0 mx-auto" />
+          </div>
+          <div className="flex flex-col items-center gap-y-4 relative z-0">
+            <div className="text-lg font-bold text-black tracking-widest">
+              SPEAKER
             </div>
-            <div className="flex flex-col items-center gap-y-4 relative z-0">
-              <div className="text-lg font-bold text-black tracking-widest">
-                SPEAKER
-              </div>
-              <div className="text-zinc-600 group-hover:text-primary-copper font-bold text-[13px] tracking-[1px] flex items-center gap-x-3 transition ease-in-out duration-300">
-                SHOP
-                <ArrowRight />
-              </div>
+            <div className="text-zinc-600 group-hover:text-primary-copper font-bold text-[13px] tracking-[1px] flex items-center gap-x-3 transition ease-in-out duration-300">
+              SHOP
+              <ArrowRight />
             </div>
           </div>
-          <div className="absolute bottom-0 z-0 w-full lg:h-[204px] h-[165px] rounded-lg bg-primary-whiteSmoke"></div>
-        </Link>
-        <Link
-          href="#"
-          className="w-full max-w-[350px] h-[284px] hover:scale-105 flex items-center justify-center relative transition ease-in-out duration-500 group"
-        >
-          <div className="w-full h-full flex flex-col items-center gap-y-12 z-10">
-            <div className="w-full h-[50%] flex items-center justify-center relative">
-              <YX1Earphones />
-              <ProductShadow className="absolute bottom-[-50px] right-0 left-0 mx-auto" />
+        </div>
+        <div className="absolute bottom-0 z-0 w-full lg:h-[204px] h-[165px] rounded-lg bg-primary-whiteSmoke"></div>
+      </Link>
+      <Link
+        href="#"
+        className="w-full max-w-[350px] h-[284px] hover:scale-105 flex items-center justify-center relative transition ease-in-out duration-500 group"
+      >
+        <div className="w-full h-full flex flex-col items-center gap-y-12 z-10">
+          <div className="w-full h-[50%] flex items-center justify-center relative">
+            <YX1Earphones />
+            <ProductShadow className="absolute bottom-[-50px] right-0 left-0 mx-auto" />
+          </div>
+          <div className="flex flex-col items-center gap-y-4 relative z-0">
+            <div className="text-lg font-bold text-black tracking-widest">
+              EARPHONES
             </div>
-            <div className="flex flex-col items-center gap-y-4 relative z-0">
-              <div className="text-lg font-bold text-black tracking-widest">
-                EARPHONES
-              </div>
-              <div className="text-zinc-600 group-hover:text-primary-copper font-bold text-[13px] tracking-[1px] flex items-center gap-x-3 transition ease-in-out duration-300">
-                SHOP
-                <ArrowRight />
-              </div>
+            <div className="text-zinc-600 group-hover:text-primary-copper font-bold text-[13px] tracking-[1px] flex items-center gap-x-3 transition ease-in-out duration-300">
+              SHOP
+              <ArrowRight />
             </div>
           </div>
-          <div className="absolute bottom-0 z-0 w-full lg:h-[204px] h-[165px] rounded-lg bg-primary-whiteSmoke"></div>
-        </Link>
-      </div>
+        </div>
+        <div className="absolute bottom-0 z-0 w-full lg:h-[204px] h-[165px] rounded-lg bg-primary-whiteSmoke"></div>
+      </Link>
     </div>
   );
 };
