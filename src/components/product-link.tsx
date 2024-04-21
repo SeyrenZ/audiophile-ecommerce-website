@@ -45,7 +45,7 @@ const ProductLink = () => {
      flex sm:flex-row flex-col items-center lg:gap-x-[30px] gap-x-[10px] sm:gap-y-0 gap-y-4 "
     >
       <Link
-        href="#"
+        href="/headphones"
         className="w-full max-w-[350px] h-[284px]  flex items-center justify-center relative "
       >
         <div className="w-full h-full flex flex-col items-center gap-y-12 z-10">

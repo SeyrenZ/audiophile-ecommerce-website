@@ -38,9 +38,11 @@ const Navbar = () => {
             isOpen
               ? "sm:translate-y-[25%] translate-y-[9.5%] opacity-100"
               : "translate-y-[-100%] opacity-0"
-          } transition ease-in-out duration-500 z-50`}
+          } transition ease-in-out lg:duration-0 duration-500 z-50`}
         >
-          <ProductLink />
+          <div onClick={() => setOpen(false)}>
+            <ProductLink />
+          </div>
         </div>
         {isOpen && (
           <div
@@ -61,7 +63,12 @@ const Navbar = () => {
               size={20}
             />
           </div>
-          <Logo className="lg:static absolute sm:left-32 sm:right-auto sm:mx-0 left-0 right-0 mx-auto" />
+          <Link
+            className="lg:static absolute sm:left-32 sm:right-auto sm:mx-0 left-0 right-0 mx-auto"
+            href="/"
+          >
+            <Logo />
+          </Link>
           <div className="w-full max-w-[429px] absolute left-0 right-0 mx-auto lg:flex hidden items-center gap-x-[34px]  ">
             {links.map((link, index) => (
               <Link
