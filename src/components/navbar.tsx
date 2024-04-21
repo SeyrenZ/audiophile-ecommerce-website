@@ -66,6 +66,7 @@ const Navbar = () => {
           <Link
             className="w-[143px] lg:static absolute sm:left-32 sm:right-auto sm:mx-0 right-0 left-0 mx-auto"
             href="/"
+            onClick={() => setOpen(false)}
           >
             <Logo />
           </Link>
