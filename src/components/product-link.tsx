@@ -47,6 +47,8 @@ const ProductLink = () => {
       <Link
         href="/headphones"
         className="w-full max-w-[350px] h-[284px]  flex items-center justify-center relative group "
+        data-aos="fade-up"
+        data-aos-duration="900"
       >
         <div className="w-full h-full flex flex-col items-center gap-y-12 z-10">
           <div className="w-full h-[50%] flex items-center justify-center relative group-hover:scale-110 transition ease-in-out duration-500 ">
@@ -68,6 +70,8 @@ const ProductLink = () => {
       <Link
         href="#"
         className="w-full max-w-[350px] h-[284px] flex items-center justify-center relative group"
+        data-aos="fade-up"
+        data-aos-duration="700"
       >
         <div className="w-full h-full flex flex-col items-center gap-y-12 z-10">
           <div className="w-full h-[50%] flex items-center justify-center relative group-hover:scale-110 transition ease-in-out duration-500 group">
@@ -89,6 +93,8 @@ const ProductLink = () => {
       <Link
         href="#"
         className="w-full max-w-[350px] h-[284px] flex items-center justify-center relative group"
+        data-aos="fade-up"
+        data-aos-duration="500"
       >
         <div className="w-full h-full flex flex-col items-center gap-y-12 z-10">
           <div className="w-full h-[50%] flex items-center justify-center relative group-hover:scale-110 transition ease-in-out duration-500 group">

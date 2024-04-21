@@ -4,7 +4,11 @@ import React from "react";
 const AboutUs = () => {
   return (
     <div className="w-full h-auto container">
-      <div className="w-full max-w-[1110px] mx-auto flex xl:flex-row flex-col items-center justify-between gap-x-10 xl:gap-y-0 sm:gap-y-[63px] gap-y-10">
+      <div
+        className="w-full max-w-[1110px] mx-auto flex xl:flex-row flex-col items-center justify-between gap-x-10 xl:gap-y-0 sm:gap-y-[63px] gap-y-10"
+        data-aos="fade-up"
+        data-aos-duration="500"
+      >
         <Image
           src="/about-us-hero-tablet.svg"
           width={689}

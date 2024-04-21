@@ -41,6 +41,8 @@ const HeadphonesProduct = () => {
           <div
             key={index}
             className="w-full h-auto flex lg:flex-row flex-col items-center justify-between gap-x-10 lg:gap-y-0 sm:gap-y-[52px] gap-y-[32px] "
+            data-aos={index === 0 || index === 2 ? "fade-right" : "fade-left"}
+            data-aos-duration="500"
           >
             <div
               className={`lg:w-[540px] w-full lg:h-[560px] h-[352px] rounded-lg bg-primary-whiteSmoke flex items-center justify-center group relative ${
