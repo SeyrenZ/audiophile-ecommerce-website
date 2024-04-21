@@ -37,7 +37,7 @@ const HeadphonesProduct = () => {
   ];
 
   return (
-    <div className="w-full h-auto sm:px-10 px-6">
+    <div className="w-full h-auto container">
       <div className="w-full max-w-[1110px] mx-auto flex flex-col gap-y-[160px]">
         {products.map((product, index) => (
           <div
