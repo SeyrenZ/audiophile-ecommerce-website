@@ -4,7 +4,12 @@ import React from "react";
 const HomeHeader = () => {
   return (
     <div className="w-full h-auto bg-[#141414]">
-      <div className="w-full max-w-[1110px] mx-auto container sm:h-[729px] h-[600px] lg:bg-HomeHeaderBg sm:bg-HomeHeaderBgTablet bg-HomeHeaderBgMobile bg-cover bg-center bg-no-repeat flex items-center lg:justify-start justify-center relative">
+      <div className="w-full max-w-[1110px] mx-auto container sm:h-[729px] h-[600px]  flex items-center lg:justify-start justify-center relative">
+        <div
+          className="w-full h-full absolute inset-0 lg:bg-HomeHeaderBg sm:bg-HomeHeaderBgTablet bg-HomeHeaderBgMobile bg-cover bg-center bg-no-repeat"
+          data-aos="fade-out"
+          data-aos-duration="1200"
+        ></div>
         <div className="mt-16 flex flex-col lg:items-start items-center gap-y-7">
           <div
             className="text-sm font-medium text-zinc-700 tracking-[10px]"
