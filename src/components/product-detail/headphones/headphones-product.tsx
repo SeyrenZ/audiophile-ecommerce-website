@@ -1,5 +1,3 @@
-import AboutUs from "@app/components/about-us";
-import ProductLink from "@app/components/product-link";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -38,7 +36,7 @@ const HeadphonesProduct = () => {
 
   return (
     <div className="w-full h-auto container">
-      <div className="w-full max-w-[1110px] mx-auto flex flex-col gap-y-[160px]">
+      <div className="w-full max-w-[1110px] mx-auto flex flex-col lg:gap-y-[160px] gap-y-[120px]">
         {products.map((product, index) => (
           <div
             key={index}
