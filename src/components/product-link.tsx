@@ -46,10 +46,10 @@ const ProductLink = () => {
     >
       <Link
         href="/headphones"
-        className="w-full max-w-[350px] h-[284px]  flex items-center justify-center relative "
+        className="w-full max-w-[350px] h-[284px]  flex items-center justify-center relative group "
       >
         <div className="w-full h-full flex flex-col items-center gap-y-12 z-10">
-          <div className="w-full h-[50%] flex items-center justify-center relative hover:scale-110 transition ease-in-out duration-500 group">
+          <div className="w-full h-[50%] flex items-center justify-center relative group-hover:scale-110 transition ease-in-out duration-500 ">
             <XX99HeadphonesMarkI />
             <ProductShadow className="absolute bottom-[-50px] right-0 left-0 mx-auto" />
           </div>
@@ -67,10 +67,10 @@ const ProductLink = () => {
       </Link>
       <Link
         href="#"
-        className="w-full max-w-[350px] h-[284px] flex items-center justify-center relative"
+        className="w-full max-w-[350px] h-[284px] flex items-center justify-center relative group"
       >
         <div className="w-full h-full flex flex-col items-center gap-y-12 z-10">
-          <div className="w-full h-[50%] flex items-center justify-center relative hover:scale-110 transition ease-in-out duration-500 group">
+          <div className="w-full h-[50%] flex items-center justify-center relative group-hover:scale-110 transition ease-in-out duration-500 group">
             <ZX9Speaker />
             <ProductShadow className="absolute bottom-[-50px] right-0 left-0 mx-auto" />
           </div>
@@ -88,10 +88,10 @@ const ProductLink = () => {
       </Link>
       <Link
         href="#"
-        className="w-full max-w-[350px] h-[284px] flex items-center justify-center relative"
+        className="w-full max-w-[350px] h-[284px] flex items-center justify-center relative group"
       >
         <div className="w-full h-full flex flex-col items-center gap-y-12 z-10">
-          <div className="w-full h-[50%] flex items-center justify-center relative hover:scale-110 transition ease-in-out duration-500 group">
+          <div className="w-full h-[50%] flex items-center justify-center relative group-hover:scale-110 transition ease-in-out duration-500 group">
             <YX1Earphones />
             <ProductShadow className="absolute bottom-[-50px] right-0 left-0 mx-auto" />
           </div>
