@@ -64,7 +64,7 @@ const Navbar = () => {
             />
           </div>
           <Link
-            className="lg:static absolute sm:left-32 sm:right-auto sm:mx-0 left-0 right-0 mx-auto"
+            className="w-[143px] lg:static absolute sm:left-32 sm:right-auto sm:mx-0 right-0 left-0 mx-auto"
             href="/"
           >
             <Logo />

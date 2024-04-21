@@ -13,7 +13,7 @@ const Home = () => {
     Aos.init();
   }, []);
   return (
-    <div className="sm:space-y-[160px] space-y-16">
+    <div className="sm:space-y-[160px] space-y-16 overflow-hidden">
       <HeadphonesHeader />
       <HeadphonesProduct />
       <div className="container">
