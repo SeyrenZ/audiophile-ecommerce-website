@@ -5,7 +5,7 @@ import React from "react";
 const YX1EarphonesCard = () => {
   return (
     <div
-      className="w-full h-auto flex sm:flex-row flex-col items-center lg:gap-x-[30px] gap-x-[10px] sm:gap-y-0 gap-y-6 group"
+      className="w-full h-auto container flex sm:flex-row flex-col items-center lg:gap-x-[30px] gap-x-[10px] sm:gap-y-0 gap-y-6 group"
       data-aos="fade-right"
       data-aos-duration="500"
     >

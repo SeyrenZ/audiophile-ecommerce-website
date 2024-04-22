@@ -5,7 +5,7 @@ import Link from "next/link";
 const ZX9SpeakerCard = () => {
   return (
     <div
-      className="w-full flex flex-col gap-y-12"
+      className="w-full h-auto container flex flex-col gap-y-12"
       data-aos="fade-right"
       data-aos-duration="500"
     >

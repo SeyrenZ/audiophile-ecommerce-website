@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       <HomeHeader />
-      <div className="sm:px-10 px-6 pt-[120px] lg:space-y-[200px] sm:space-y-[96px] space-y-[120px]">
+      <div className="pt-[120px] lg:space-y-[200px] sm:space-y-[96px] space-y-[120px]">
         <ProductLink />
         <HomeProduct />
         <AboutUs />
