@@ -1,11 +1,11 @@
 "use client";
-import AboutUs from "@app/components/about-us";
+import AboutUs from "@app/components/layout/about-us";
 import HomeHeader from "@app/components/home/home-header";
 import HomeProduct from "@app/components/home/home-product";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import ProductLink from "@app/components/product-link";
+import ProductLink from "@app/components/layout/product-link";
 
 export default function Home() {
   useEffect(() => {

@@ -5,7 +5,7 @@ import {
   XX99HeadphonesMarkI,
   YX1Earphones,
   ZX9Speaker,
-} from "./svg";
+} from "../svg";
 
 // interface ProductDetail {
 //   title: string;

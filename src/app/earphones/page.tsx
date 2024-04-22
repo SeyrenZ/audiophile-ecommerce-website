@@ -4,10 +4,10 @@ import React from "react";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import CategroryHeader from "@app/components/category-header";
-import EarphonesProduct from "@app/components/product-detail/earphones/earphones-product";
-import ProductLink from "@app/components/product-link";
-import AboutUs from "@app/components/about-us";
+import CategroryHeader from "@app/components/layout/category-header";
+import EarphonesProduct from "@app/components/product/earphones/earphones-product";
+import ProductLink from "@app/components/layout/product-link";
+import AboutUs from "@app/components/layout/about-us";
 
 const Home = () => {
   useEffect(() => {
