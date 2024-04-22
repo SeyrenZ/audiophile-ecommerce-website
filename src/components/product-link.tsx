@@ -69,7 +69,7 @@ const ProductLink = () => {
           <div className="absolute bottom-0 z-0 w-full lg:h-[204px] h-[165px] rounded-lg bg-primary-whiteSmoke"></div>
         </Link>
         <Link
-          href="#"
+          href="/speakers"
           className="w-full max-w-[350px] h-[284px] flex items-center justify-center relative group"
           data-aos="fade-up"
           data-aos-duration="700"
@@ -92,7 +92,7 @@ const ProductLink = () => {
           <div className="absolute bottom-0 z-0 w-full lg:h-[204px] h-[165px] rounded-lg bg-primary-whiteSmoke"></div>
         </Link>
         <Link
-          href="#"
+          href="/earphones"
           className="w-full max-w-[350px] h-[284px] flex items-center justify-center relative group"
           data-aos="fade-up"
           data-aos-duration="500"

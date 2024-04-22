@@ -1,12 +1,12 @@
 "use client";
 import AboutUs from "@app/components/about-us";
-import HeadphonesHeader from "@app/components/product-detail/headphones/headphones-header";
 import HeadphonesProduct from "@app/components/product-detail/headphones/headphones-product";
 import ProductLink from "@app/components/product-link";
 import React from "react";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import CategroryHeader from "@app/components/category-header";
 
 const Home = () => {
   useEffect(() => {
@@ -14,7 +14,7 @@ const Home = () => {
   }, []);
   return (
     <div className="sm:space-y-[160px] space-y-16 overflow-hidden">
-      <HeadphonesHeader />
+      <CategroryHeader title="HEADPHONES" />
       <HeadphonesProduct />
       <ProductLink />
       <AboutUs />

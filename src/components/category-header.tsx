@@ -1,6 +1,8 @@
-import React from "react";
+interface Category {
+  title: string;
+}
 
-const SpeakersHeader = () => {
+const CategroryHeader: React.FC<Category> = ({ title }) => {
   return (
     <div className="w-full sm:h-[336px] h-[192px] sm:pb-24 pb-7 bg-black flex items-end justify-center">
       <div
@@ -8,10 +10,10 @@ const SpeakersHeader = () => {
         data-aos="zoom-in"
         data-aos-duration="500"
       >
-        SPEAKERS
+        {title}
       </div>
     </div>
   );
 };
 
-export default SpeakersHeader;
+export default CategroryHeader;

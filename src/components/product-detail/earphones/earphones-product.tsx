@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const SpeakersProduct = () => {
+const EarphonesProduct = () => {
   type Product = {
     title: string;
     description: string;
@@ -12,17 +12,10 @@ const SpeakersProduct = () => {
 
   const products: Product[] = [
     {
-      title: "ZX9 SPEAKER",
+      title: "YX1 WIRELESS EARPHONES",
       description:
-        "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
-      image: "/zx9-product-photo.svg",
-      link: "#",
-    },
-    {
-      title: "ZX7 SPEAKER",
-      description:
-        "Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
-      image: "/zx7-product-photo.svg",
+        "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
+      image: "/yx1-product-photo.svg",
       link: "#",
     },
   ];
@@ -44,8 +37,8 @@ const SpeakersProduct = () => {
             >
               <Image
                 src={product.image}
-                width={351}
-                height={413}
+                width={296}
+                height={348}
                 alt="XX99-MARKII-HEADPHONES"
                 className="lg:w-fit w-[220px] mt-8 group-hover:scale-110  transition ease-in-out duration-700 static z-10"
               />
@@ -76,4 +69,4 @@ const SpeakersProduct = () => {
   );
 };
 
-export default SpeakersProduct;
+export default EarphonesProduct;

@@ -15,7 +15,7 @@ const Navbar = () => {
     { title: "Home", href: "/" },
     { title: "Headphones", href: "/headphones" },
     { title: "Speakers", href: "/speakers" },
-    { title: "Earphones", href: "#" },
+    { title: "Earphones", href: "/earphones" },
   ];
 
   const [isOpen, setOpen] = useState(false);
