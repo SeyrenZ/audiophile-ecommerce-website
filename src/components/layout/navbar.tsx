@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+
 import { CartIcon, Logo } from "../svg";
 import Link from "next/link";
 import { Squash as Hamburger } from "hamburger-react";
