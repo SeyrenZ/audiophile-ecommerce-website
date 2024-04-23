@@ -1,76 +1,28 @@
-import Image from "next/image";
-import Link from "next/link";
+import Product from "@app/components/layout/product";
 import React from "react";
 
 const SpeakersProduct = () => {
-  type Product = {
-    title: string;
-    description: string;
-    image: string;
-    link: string;
-  };
-
-  const products: Product[] = [
-    {
-      title: "ZX9 SPEAKER",
-      description:
-        "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
-      image: "/zx9-product-photo.svg",
-      link: "#",
-    },
-    {
-      title: "ZX7 SPEAKER",
-      description:
-        "Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
-      image: "/zx7-product-photo.svg",
-      link: "#",
-    },
-  ];
-
   return (
     <div className="w-full h-auto container">
       <div className="w-full max-w-[1110px] mx-auto flex flex-col lg:gap-y-[160px] gap-y-[120px]">
-        {products.map((product, index) => (
-          <div
-            key={index}
-            className="w-full h-auto flex lg:flex-row flex-col items-center justify-between gap-x-10 lg:gap-y-0 sm:gap-y-[52px] gap-y-[32px] "
-            data-aos={index === 0 || index === 2 ? "fade-right" : "fade-left"}
-            data-aos-duration="500"
-          >
-            <div
-              className={`lg:w-[540px] w-full lg:h-[560px] h-[352px] rounded-lg bg-primary-whiteSmoke flex items-center justify-center group relative ${
-                index === 1 ? "lg:order-2" : "order-1"
-              }`}
-            >
-              <Image
-                src={product.image}
-                width={351}
-                height={413}
-                alt="XX99-MARKII-HEADPHONES"
-                className="lg:w-fit w-[220px] mt-8 group-hover:scale-110  transition ease-in-out duration-700 static z-10"
-              />
-            </div>
-            <div className="lg:w-[445px] sm:w-[572px] w-full h-auto flex flex-col lg:items-start items-center gap-y-4 order-1">
-              {index === 0 && (
-                <div className="text-sm font-medium text-primary-copper tracking-[10px]">
-                  NEW PRODUCT
-                </div>
-              )}
-              <div className="w-[296px] sm:mt-0 mt-1.5 text-black font-bold sm:text-[40px] text-[28px] sm:leading-[44px] tracking-[1.43px] lg:text-left text-center">
-                {product.title}
-              </div>
-              <div className="sm:mt-4 text-[15px] leading-[25px] text-zinc-500 font-medium lg:text-left text-center">
-                {product.description}
-              </div>
-              <Link
-                href={product.link}
-                className="w-fit lg:mt-6 mt-2 px-8 py-[15px] bg-primary-copper hover:bg-primary-apricot text-[13px] text-white font-bold tracking-[1px] transition ease-in-out duration-300"
-              >
-                SEE PRODUCT
-              </Link>
-            </div>
-          </div>
-        ))}
+        <Product
+          name="ZX9 SPEAKER"
+          desc="Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups."
+          image="/zx9-product-photo.svg"
+          newProduct="visible"
+          animation="fade-right"
+          position="order-1"
+          link="#"
+        />
+        <Product
+          name="ZX7 SPEAKER"
+          desc="Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use."
+          image="/zx7-product-photo.svg"
+          newProduct="hidden"
+          animation="fade-left"
+          position="lg:order-2"
+          link="#"
+        />
       </div>
     </div>
   );

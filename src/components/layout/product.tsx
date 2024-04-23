@@ -6,6 +6,7 @@ interface ProductDescription {
   name: string;
   desc: string;
   image: string;
+  newProduct: string;
   animation: string;
   position: string;
   link: string;
@@ -15,6 +16,7 @@ const Product: React.FC<ProductDescription> = ({
   name,
   desc,
   image,
+  newProduct,
   animation,
   position,
   link,
@@ -39,7 +41,9 @@ const Product: React.FC<ProductDescription> = ({
             />
           </div>
           <div className="lg:w-[445px] sm:w-[572px] w-full h-auto flex flex-col lg:items-start items-center gap-y-4 order-1">
-            <div className="text-sm font-medium text-primary-copper tracking-[10px]">
+            <div
+              className={`text-sm font-medium text-primary-copper tracking-[10px] ${newProduct}`}
+            >
               NEW PRODUCT
             </div>
 
