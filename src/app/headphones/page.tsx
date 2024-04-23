@@ -1,6 +1,6 @@
 "use client";
 import AboutUs from "@app/components/layout/about-us";
-import HeadphonesProduct from "@app/components/product/headphones/headphones-product";
+import HeadphonesProduct from "@app/components/categories/headphones/headphones-product";
 import ProductLink from "@app/components/layout/product-link";
 import React from "react";
 import { useEffect } from "react";
