@@ -12,7 +12,7 @@ const HeadphonesProduct = () => {
           newProduct="visible"
           animation="fade-right"
           position="order-1"
-          link="#"
+          link="/headphones/xx99-markII-headphones"
         />
         <Product
           name="XX99 MARK I HEADPHONES"
