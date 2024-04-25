@@ -50,7 +50,7 @@ const ProductDetail: React.FC<ProductDescription> = ({
               {desc}
             </div>
             <div className="sm:mt-3 text-lg text-black font-bold tracking-[1.29px]">
-              ${price}
+              $ {price}
             </div>
             <div className="lg:mt-8 sm:mt-4 mt-2 w-full h-[48px] flex items-center gap-x-5">
               <div className="w-[120px] h-full bg-primary-whiteSmoke flex items-center justify-between">
