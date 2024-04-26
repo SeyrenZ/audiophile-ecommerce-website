@@ -18,7 +18,7 @@ const YX1EarphonesCard = () => {
             YX1 EARPHONES
           </div>
           <Link
-            href="#"
+            href="/earphones/yx1-wireless-earphones"
             className="w-fit px-8 py-[15px] bg-black bg-opacity-0 hover:bg-opacity-100 border-[1px] border-black  text-[13px] text-black hover:text-white font-bold tracking-[1px] transition ease-in-out duration-300"
           >
             SEE PRODUCT
