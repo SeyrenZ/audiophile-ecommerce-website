@@ -9,7 +9,7 @@ import ProductSuggestion from "@app/components/layout/product-suggestion";
 const Home = () => {
   const productData: ProductDescription = {
     name: "XX99 MARK I HEADPHONES",
-    desc: "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go. ",
+    desc: "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
     image: "/xx59-product-photo.svg",
     subImage1: "/xx59-sub-image-1.svg",
     subImage2: "/xx59-sub-image-2.svg",
