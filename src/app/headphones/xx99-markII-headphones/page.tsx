@@ -6,7 +6,7 @@ import { ProductDescription } from "@app/components/layout/product-detail";
 import { SuggestionData } from "@app/components/layout/product-suggestion";
 import ProductSuggestion from "@app/components/layout/product-suggestion";
 
-const Home = () => {
+const XX99MarkIIProductDetail = () => {
   const productData: ProductDescription = {
     name: "XX99 MARK II HEADPHONES",
     desc: "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
@@ -61,4 +61,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default XX99MarkIIProductDetail;

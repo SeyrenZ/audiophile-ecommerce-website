@@ -6,7 +6,7 @@ import { ProductDescription } from "@app/components/layout/product-detail";
 import { SuggestionData } from "@app/components/layout/product-suggestion";
 import ProductSuggestion from "@app/components/layout/product-suggestion";
 
-const Home = () => {
+const XX99MarkIProductDetail = () => {
   const productData: ProductDescription = {
     name: "XX99 MARK I HEADPHONES",
     desc: "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go. ",
@@ -59,4 +59,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default XX99MarkIProductDetail;

@@ -6,7 +6,7 @@ import { ProductDescription } from "@app/components/layout/product-detail";
 import { SuggestionData } from "@app/components/layout/product-suggestion";
 import ProductSuggestion from "@app/components/layout/product-suggestion";
 
-const Home = () => {
+const YX1ProductDetail = () => {
   const productData: ProductDescription = {
     name: "YX1 WIRELESS EARPHONES",
     desc: "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
@@ -60,4 +60,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default YX1ProductDetail;

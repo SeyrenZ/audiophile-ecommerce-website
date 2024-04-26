@@ -6,7 +6,7 @@ import { ProductDescription } from "@app/components/layout/product-detail";
 import { SuggestionData } from "@app/components/layout/product-suggestion";
 import ProductSuggestion from "@app/components/layout/product-suggestion";
 
-const Home = () => {
+const ZX9ProductDetail = () => {
   const productData: ProductDescription = {
     name: "ZX9 SPEAKER",
     desc: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
@@ -60,4 +60,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ZX9ProductDetail;

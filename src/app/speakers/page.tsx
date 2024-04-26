@@ -8,7 +8,7 @@ import ProductLink from "@app/components/layout/product-link";
 import AboutUs from "@app/components/layout/about-us";
 import CategroryHeader from "@app/components/layout/category-header";
 
-const Home = () => {
+const SpeakersCategory = () => {
   useEffect(() => {
     Aos.init();
   }, []);
@@ -22,4 +22,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default SpeakersCategory;

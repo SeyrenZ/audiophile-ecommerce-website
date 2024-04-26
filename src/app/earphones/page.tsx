@@ -9,7 +9,7 @@ import EarphonesProduct from "@app/components/categories/earphones/earphones-pro
 import ProductLink from "@app/components/layout/product-link";
 import AboutUs from "@app/components/layout/about-us";
 
-const Home = () => {
+const EarphonesCategory = () => {
   useEffect(() => {
     Aos.init();
   }, []);
@@ -23,4 +23,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default EarphonesCategory;

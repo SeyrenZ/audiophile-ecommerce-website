@@ -6,7 +6,7 @@ import { ProductDescription } from "@app/components/layout/product-detail";
 import { SuggestionData } from "@app/components/layout/product-suggestion";
 import ProductSuggestion from "@app/components/layout/product-suggestion";
 
-const Home = () => {
+const XX59ProductDetail = () => {
   const productData: ProductDescription = {
     name: "XX99 MARK I HEADPHONES",
     desc: "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
@@ -59,4 +59,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default XX59ProductDetail;

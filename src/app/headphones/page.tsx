@@ -8,7 +8,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import CategroryHeader from "@app/components/layout/category-header";
 
-const Home = () => {
+const HeadphonesCategory = () => {
   useEffect(() => {
     Aos.init();
   }, []);
@@ -22,4 +22,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HeadphonesCategory;
