@@ -41,7 +41,7 @@ const Home = () => {
       },
       {
         title: "ZX9 SPEAKER",
-        link: "/",
+        link: "/speakers/zx9-speaker",
         image: "/zx9-product-photo-no-shadow.svg",
       },
     ],

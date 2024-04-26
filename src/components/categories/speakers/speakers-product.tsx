@@ -12,7 +12,7 @@ const SpeakersProduct = () => {
           newProduct="visible"
           animation="fade-right"
           position="order-1"
-          link="#"
+          link="/speakers/zx9-speaker"
         />
         <Product
           name="ZX7 SPEAKER"
