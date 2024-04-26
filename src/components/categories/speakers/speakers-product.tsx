@@ -21,7 +21,7 @@ const SpeakersProduct = () => {
           newProduct="hidden"
           animation="fade-left"
           position="lg:order-2"
-          link="#"
+          link="/speakers/zx7-speaker"
         />
       </div>
     </div>

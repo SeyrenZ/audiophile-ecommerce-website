@@ -12,7 +12,7 @@ const EarphonesProduct = () => {
           newProduct="visible"
           animation="fade-right"
           position="order-1"
-          link="#"
+          link="/earphones/yx1-wireless-earphones"
         />
       </div>
     </div>
