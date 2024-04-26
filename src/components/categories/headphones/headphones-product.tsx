@@ -21,7 +21,7 @@ const HeadphonesProduct = () => {
           newProduct="hidden"
           animation="fade-left"
           position="lg:order-2"
-          link="#"
+          link="/headphones/xx99-markI-headphones"
         />
         <Product
           name="XX59 HEADPHONES"
@@ -29,8 +29,8 @@ const HeadphonesProduct = () => {
           image="/xx59-product-photo.svg"
           newProduct="hidden"
           animation="fade-right"
-          link="#"
           position="order-1"
+          link="/headphones/xx59-headphones"
         />
       </div>
     </div>

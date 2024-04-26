@@ -12,7 +12,7 @@ export interface ProductDescription {
   features: string;
   newProduct: string;
   alt: string;
-  price: number;
+  price: string;
   itemsInBox: { quantity: number; unit: string }[];
 }
 
