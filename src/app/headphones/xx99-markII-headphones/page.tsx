@@ -3,6 +3,8 @@ import ProductDetail from "@app/components/layout/product-detail";
 import ProductLink from "@app/components/layout/product-link";
 import React from "react";
 import { ProductDescription } from "@app/components/layout/product-detail";
+import { SuggestionData } from "@app/components/layout/product-suggestion";
+import ProductSuggestion from "@app/components/layout/product-suggestion";
 
 const Home = () => {
   const productData: ProductDescription = {
@@ -26,11 +28,32 @@ const Home = () => {
       { quantity: 1, unit: "Travel Bag" },
     ],
   };
+
+  const productSuggestionData: SuggestionData = {
+    product: [
+      {
+        title: "XX99 MARK I",
+        link: "/",
+        image: "/xx99-markI-product-photo-no-shadow.svg",
+      },
+      {
+        title: "XX59",
+        link: "/",
+        image: "/xx59-product-photo-no-shadow.svg",
+      },
+      {
+        title: "ZX9 SPEAKER",
+        link: "/",
+        image: "/zx9-product-photo-no-shadow.svg",
+      },
+    ],
+  };
   return (
     <div className="">
       <div className="w-full lg:h-[90px] sm:h-[113px] h-[97px] bg-black" />
       <div className="lg:py-[160px] py-[65px] space-y-[160px]">
         <ProductDetail {...productData} />
+        <ProductSuggestion {...productSuggestionData} />
         <ProductLink />
         <AboutUs />
       </div>
