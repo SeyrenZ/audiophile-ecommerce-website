@@ -11,8 +11,8 @@ const Footer = () => {
   const links: Link[] = [
     { title: "Home", href: "/" },
     { title: "Headphones", href: "/headphones" },
-    { title: "Speakers", href: "#" },
-    { title: "Earphones", href: "#" },
+    { title: "Speakers", href: "/speakers" },
+    { title: "Earphones", href: "/earphones" },
   ];
 
   return (
