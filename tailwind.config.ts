@@ -1,4 +1,3 @@
-import { YX1Earphones } from "@app/components/svg";
 import type { Config } from "tailwindcss";
 
 const config = {

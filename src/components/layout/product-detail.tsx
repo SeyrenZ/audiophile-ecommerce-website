@@ -6,6 +6,9 @@ export interface ProductDescription {
   name: string;
   desc: string;
   image: string;
+  subImage1: string;
+  subImage2: string;
+  subImage3: string;
   features: string;
   newProduct: string;
   alt: string;
@@ -17,6 +20,9 @@ const ProductDetail: React.FC<ProductDescription> = ({
   name,
   desc,
   image,
+  subImage1,
+  subImage2,
+  subImage3,
   features,
   newProduct,
   alt,
@@ -94,6 +100,31 @@ const ProductDetail: React.FC<ProductDescription> = ({
               ))}
             </div>
           </div>
+        </div>
+        <div className="w-full lg:h-[529px] sm:h-[368px] h-[756px] flex sm:flex-row flex-col sm:gap-8 gap-5">
+          <div className="w-full lg:max-w-[445px] sm:max-w-[277px] h-full flex flex-col sm:gap-y-8 gap-5">
+            <div
+              className="w-full rounded-lg h-full "
+              style={{
+                backgroundImage: `url(${subImage1})`,
+                backgroundSize: "cover",
+              }}
+            />
+            <div
+              className="w-full rounded-lg h-full "
+              style={{
+                backgroundImage: `url(${subImage2})`,
+                backgroundSize: "cover",
+              }}
+            />
+          </div>
+          <div
+            className="w-full rounded-lg h-full "
+            style={{
+              backgroundImage: `url(${subImage3})`,
+              backgroundSize: "cover",
+            }}
+          />
         </div>
       </div>
     </div>
