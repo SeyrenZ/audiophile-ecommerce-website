@@ -38,12 +38,12 @@ const XX99MarkIIProductDetail = () => {
       },
       {
         title: "XX59",
-        link: "/",
+        link: "/headphones/xx59-headphones",
         image: "/xx59-product-photo-no-shadow.svg",
       },
       {
         title: "ZX9 SPEAKER",
-        link: "/",
+        link: "/speaker/zx9-speaker",
         image: "/zx9-product-photo-no-shadow.svg",
       },
     ],
