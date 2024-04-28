@@ -1,31 +1,49 @@
 import Product from "@app/components/layout/product";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-const SpeakersProduct = () => {
+export interface ProductDescription {
+  name: string;
+  desc: string;
+  image: string;
+  newProduct: string;
+  link: string;
+}
+
+const HeadphonesProduct = () => {
+  const [productData, setProductData] = useState<ProductDescription[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/data/speakers-product-data.json");
+        const data = await response.json();
+        setProductData(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="w-full h-auto container">
       <div className="w-full max-w-[1110px] mx-auto flex flex-col lg:gap-y-[160px] gap-y-[120px]">
-        <Product
-          name="ZX9 SPEAKER"
-          desc="Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups."
-          image="/zx9-product-photo.svg"
-          newProduct="visible"
-          animation="fade-right"
-          position="order-1"
-          link="/speakers/zx9-speaker"
-        />
-        <Product
-          name="ZX7 SPEAKER"
-          desc="Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use."
-          image="/zx7-product-photo.svg"
-          newProduct="hidden"
-          animation="fade-left"
-          position="lg:order-2"
-          link="/speakers/zx7-speaker"
-        />
+        {productData.map((product, index) => (
+          <Product
+            key={index}
+            name={product.name}
+            desc={product.desc}
+            image={product.image}
+            newProduct={product.newProduct}
+            animation={index % 2 === 0 ? "fade-right" : "fade-left"} // Example animation logic
+            position={index % 2 === 0 ? "order-1" : "lg:order-2"} // Example position logic
+            link={product.link}
+          />
+        ))}
       </div>
     </div>
   );
 };
 
-export default SpeakersProduct;
+export default HeadphonesProduct;

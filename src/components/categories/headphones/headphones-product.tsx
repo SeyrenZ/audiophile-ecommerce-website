@@ -1,37 +1,46 @@
 import Product from "@app/components/layout/product";
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+export interface ProductDescription {
+  name: string;
+  desc: string;
+  image: string;
+  newProduct: string;
+  link: string;
+}
 
 const HeadphonesProduct = () => {
+  const [productData, setProductData] = useState<ProductDescription[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/data/headphones-product-data.json");
+        const data = await response.json();
+        setProductData(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="w-full h-auto container">
       <div className="w-full max-w-[1110px] mx-auto flex flex-col lg:gap-y-[160px] gap-y-[120px]">
-        <Product
-          name="XX99 MARK II HEADPHONES"
-          desc="The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound."
-          image="/xx99-markII-product-photo.svg"
-          newProduct="visible"
-          animation="fade-right"
-          position="order-1"
-          link="/headphones/xx99-markII-headphones"
-        />
-        <Product
-          name="XX99 MARK I HEADPHONES"
-          desc="The new XX99 Mark I headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound."
-          image="/xx99-markI-product-photo.svg"
-          newProduct="hidden"
-          animation="fade-left"
-          position="lg:order-2"
-          link="/headphones/xx99-markI-headphones"
-        />
-        <Product
-          name="XX59 HEADPHONES"
-          desc="Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move."
-          image="/xx59-product-photo.svg"
-          newProduct="hidden"
-          animation="fade-right"
-          position="order-1"
-          link="/headphones/xx59-headphones"
-        />
+        {productData.map((product, index) => (
+          <Product
+            key={index}
+            name={product.name}
+            desc={product.desc}
+            image={product.image}
+            newProduct={product.newProduct}
+            animation={index % 2 === 0 ? "fade-right" : "fade-left"} // Example animation logic
+            position={index % 2 === 0 ? "order-1" : "lg:order-2"} // Example position logic
+            link={product.link}
+          />
+        ))}
       </div>
     </div>
   );
