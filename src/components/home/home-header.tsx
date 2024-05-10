@@ -40,7 +40,7 @@ const HomeHeader = () => {
             enthusiast.
           </div>
           <Link
-            href="#"
+            href="/headphones/xx99-markII"
             className="w-fit mt-5 px-8 py-[15px] bg-primary-copper hover:bg-primary-apricot text-[13px] text-white font-bold tracking-[1px] transition ease-in-out duration-300"
             data-aos="fade-right"
             data-aos-duration="1100"
