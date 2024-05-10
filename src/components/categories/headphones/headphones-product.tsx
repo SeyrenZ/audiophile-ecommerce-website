@@ -6,7 +6,7 @@ export interface ProductDescription {
   desc: string;
   image: string;
   newProduct: string;
-  link: string;
+  id: string;
 }
 
 const HeadphonesProduct = () => {
@@ -38,7 +38,7 @@ const HeadphonesProduct = () => {
             newProduct={product.newProduct}
             animation={index % 2 === 0 ? "fade-right" : "fade-left"} // Example animation logic
             position={index % 2 === 0 ? "order-1" : "lg:order-2"} // Example position logic
-            link={product.link}
+            id={`headphones/${product.id.toString()}`}
           />
         ))}
       </div>

@@ -9,7 +9,7 @@ interface ProductDescription {
   newProduct: string;
   animation: string;
   position: string;
-  link: string;
+  id: string;
 }
 
 const Product: React.FC<ProductDescription> = ({
@@ -19,7 +19,7 @@ const Product: React.FC<ProductDescription> = ({
   newProduct,
   animation,
   position,
-  link,
+  id,
 }) => {
   return (
     <div className="w-full h-auto container">
@@ -54,7 +54,7 @@ const Product: React.FC<ProductDescription> = ({
               {desc}
             </div>
             <Link
-              href={link}
+              href={id}
               className="w-fit lg:mt-6 mt-2 px-8 py-[15px] bg-primary-copper hover:bg-primary-apricot text-[13px] text-white font-bold tracking-[1px] transition ease-in-out duration-300"
             >
               SEE PRODUCT
