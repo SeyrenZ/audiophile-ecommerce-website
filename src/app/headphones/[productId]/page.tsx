@@ -2,6 +2,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import ProductDetail from "@app/components/layout/product-detail";
+import AboutUs from "@app/components/layout/about-us";
+import ProductLink from "@app/components/layout/product-link";
+import Link from "next/link";
+import GoBackLink from "@app/components/layout/back-link";
 
 type ProductDescription = {
   id: string;
@@ -39,12 +43,17 @@ const Page = () => {
   return (
     <div>
       <div className="w-full lg:h-[90px] sm:h-[113px] h-[97px] bg-black" />
-      <div className="lg:py-[160px] py-[65px] space-y-[160px]">
-        {productData
-          .filter((product) => product.id === String(params.productId))
-          .map((product, index) => (
-            <ProductDetail key={index} {...product} />
-          ))}
+      <div className="lg:py-20 sm:py-8 py-4 space-y-[160px]">
+        <div className="lg:space-y-14 space-y-6">
+          <GoBackLink link="/headphones" />
+          {productData
+            .filter((product) => product.id === String(params.productId))
+            .map((product, index) => (
+              <ProductDetail key={index} {...product} />
+            ))}
+        </div>
+        <ProductLink />
+        <AboutUs />
       </div>
     </div>
   );

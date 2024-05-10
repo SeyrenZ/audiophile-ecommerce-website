@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import Link from "next/link";
 
 export interface ProductDescription {
   name: string;
