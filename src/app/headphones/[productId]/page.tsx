@@ -4,7 +4,6 @@ import { useParams } from "next/navigation";
 import ProductDetail from "@app/components/layout/product-detail";
 import AboutUs from "@app/components/layout/about-us";
 import ProductLink from "@app/components/layout/product-link";
-import Link from "next/link";
 import GoBackLink from "@app/components/layout/back-link";
 
 type ProductDescription = {
