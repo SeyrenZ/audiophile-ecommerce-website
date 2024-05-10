@@ -11,9 +11,7 @@ export interface ProductDescription {
 }
 
 const HeadphonesProduct = () => {
-  const [productData, setProductData] = useState<ProductDescription | null>(
-    null
-  );
+  const [productData, setProductData] = useState<ProductDescription[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,17 +30,18 @@ const HeadphonesProduct = () => {
   return (
     <div className="w-full h-auto container">
       <div className="w-full max-w-[1110px] mx-auto flex flex-col lg:gap-y-[160px] gap-y-[120px]">
-        {productData && (
+        {productData.map((product, index) => (
           <Product
-            name={productData.name}
-            desc={productData.desc}
-            image={productData.image}
-            newProduct={productData.newProduct}
-            animation="fade-right" // Example animation logic
-            position="order-1" // Example position logic
-            id={`headphones/${productData.id.toString()}`} // Fixed the variable name from 'product' to 'productData'
+            key={index}
+            name={product.name}
+            desc={product.desc}
+            image={product.image}
+            newProduct={product.newProduct}
+            animation={index % 2 === 0 ? "fade-right" : "fade-left"} // Example animation logic
+            position={index % 2 === 0 ? "order-1" : "lg:order-2"} // Example position logic
+            id={`earphones/${product.id.toString()}`}
           />
-        )}
+        ))}
       </div>
     </div>
   );
