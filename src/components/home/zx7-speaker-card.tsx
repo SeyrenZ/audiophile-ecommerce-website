@@ -15,7 +15,7 @@ const ZX7SpeakerCard = () => {
             ZX7 Speaker
           </div>
           <Link
-            href="/speakers/zx7-speaker"
+            href="/speakers/zx7"
             className="w-fit px-8 py-[15px] bg-black bg-opacity-0 hover:bg-opacity-100 border-[1px] border-black  text-[13px] text-black hover:text-white font-bold tracking-[1px] transition ease-in-out duration-300"
           >
             SEE PRODUCT

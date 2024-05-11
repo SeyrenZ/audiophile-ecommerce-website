@@ -31,7 +31,7 @@ const ZX9SpeakerCard = () => {
             <br className="sm:block hidden" /> sound.
           </div>
           <Link
-            href="/speakers/zx9-speaker"
+            href="/speakers/zx9"
             className="w-fit sm:mt-5 mt-2 px-8 py-[15px] bg-black hover:bg-zinc-600 text-[13px] text-white font-bold tracking-[1px] transition ease-in-out duration-300"
           >
             SEE PRODUCT
