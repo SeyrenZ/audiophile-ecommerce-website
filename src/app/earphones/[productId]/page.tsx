@@ -1,10 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
-import { useParams } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import ProductDetail from "@app/components/layout/product-detail";
 import AboutUs from "@app/components/layout/about-us";
 import ProductLink from "@app/components/layout/product-link";
 import GoBackLink from "@app/components/layout/back-link";
+import ProductLoadingSkeleton from "@app/components/layout/product-loading-skeleton";
 
 type ProductDescription = {
   id: string;
@@ -39,17 +40,21 @@ const Page = () => {
 
     fetchData();
   }, []);
+  if (productData.length === 0) return <ProductLoadingSkeleton />; // Wait for data to be fetched
+  const product = productData.find(
+    (product) => product.id === String(params.productId)
+  );
+  if (!product) {
+    notFound(); // Call notFound() if product is not found
+  }
+
   return (
     <div>
       <div className="w-full lg:h-[90px] sm:h-[113px] h-[97px] bg-black" />
       <div className="lg:py-20 sm:py-8 py-4 space-y-[160px]">
         <div className="lg:space-y-14 space-y-6">
           <GoBackLink link="/earphones" />
-          {productData
-            .filter((product) => product.id === String(params.productId))
-            .map((product, index) => (
-              <ProductDetail key={index} {...product} />
-            ))}
+          {product && <ProductDetail key={product.id} {...product} />}
         </div>
         <ProductLink />
         <AboutUs />

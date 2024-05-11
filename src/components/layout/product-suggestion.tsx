@@ -3,9 +3,10 @@ import Link from "next/link";
 import React from "react";
 
 interface Product {
-  title: string;
-  link: string;
+  name: string;
+  id: string;
   image: string;
+  category: string;
 }
 
 export interface SuggestionData {
@@ -35,10 +36,10 @@ const ProductSuggestion: React.FC<SuggestionData> = ({ product }) => {
                 />
               </div>
               <div className="text-[24px] font-bold text-black tracking-[1.71px]">
-                {product.title}
+                {product.name}
               </div>
               <Link
-                href={product.link}
+                href={"/" + product.category + "/" + product.id}
                 className="w-fit px-8 py-[15px] bg-primary-copper hover:bg-primary-apricot text-[13px] text-white font-bold tracking-[1px] transition ease-in-out duration-300"
               >
                 SEE PRODUCT
