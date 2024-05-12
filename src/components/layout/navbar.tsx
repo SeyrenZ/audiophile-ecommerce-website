@@ -1,6 +1,6 @@
 "use client";
-import React, { useState, useEffect } from "react";
-
+import React, { useState, useEffect, use } from "react";
+import { usePathname } from "next/navigation";
 import { CartIcon, Logo } from "../svg";
 import Link from "next/link";
 import { Squash as Hamburger } from "hamburger-react";
@@ -20,6 +20,7 @@ const Navbar = () => {
   ];
 
   const [isOpen, setOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleResize = () => {
@@ -31,9 +32,18 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, [isOpen]);
 
+  const handlePages =
+    pathname.startsWith("/headphones") ||
+    pathname.startsWith("/speakers") ||
+    pathname.startsWith("/earphones");
+
   return (
     <>
-      <div className="w-full h-auto absolute z-50 ">
+      <div
+        className={`w-full h-auto z-50 ${
+          handlePages ? "bg-black static" : "bg-transparent absolute"
+        } `}
+      >
         <div
           className={`absolute w-full h-auto container py-16 left-0 bg-white rounded-b-xl ${
             isOpen

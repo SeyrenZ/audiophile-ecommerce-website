@@ -51,7 +51,6 @@ const Page = () => {
 
   return (
     <div>
-      <div className="w-full lg:h-[90px] sm:h-[113px] h-[97px] bg-black" />
       <div className="lg:py-20 sm:py-8 py-4 space-y-[160px]">
         <div className="lg:space-y-14 space-y-6">
           <GoBackLink link="/speakers" />
