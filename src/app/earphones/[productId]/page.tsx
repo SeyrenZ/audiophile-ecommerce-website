@@ -9,6 +9,7 @@ import ProductLoadingSkeleton from "@app/components/layout/product-loading-skele
 
 type ProductDescription = {
   id: string;
+  category: string;
   name: string;
   desc: string;
   image: string;
@@ -24,15 +25,20 @@ type ProductDescription = {
 
 const Page = () => {
   const [productData, setProductData] = useState<ProductDescription[]>([]);
+  const [earphonesData, setEarphonesData] = useState<ProductDescription[]>([]);
   const params = useParams();
   console.log(params);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/data/earphones-product-data.json");
+        const response = await fetch("/data/product-data.json");
         const data = await response.json();
         setProductData(data);
+        const earphones = data.filter(
+          (product: ProductDescription) => product.category === "earphones"
+        );
+        setEarphonesData(earphones);
       } catch (error) {
         console.log(error);
       }
@@ -40,8 +46,8 @@ const Page = () => {
 
     fetchData();
   }, []);
-  if (productData.length === 0) return <ProductLoadingSkeleton />; // Wait for data to be fetched
-  const product = productData.find(
+  if (earphonesData.length === 0) return <ProductLoadingSkeleton />; // Wait for data to be fetched
+  const product = earphonesData.find(
     (product) => product.id === String(params.productId)
   );
   if (!product) {
