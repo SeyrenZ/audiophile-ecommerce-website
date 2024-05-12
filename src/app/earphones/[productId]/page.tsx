@@ -1,11 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 import { notFound, useParams } from "next/navigation";
+import { GetRandomizedProducts } from "@app/utils/product-utils";
 import ProductDetail from "@app/components/layout/product-detail";
 import AboutUs from "@app/components/layout/about-us";
 import ProductLink from "@app/components/layout/product-link";
 import GoBackLink from "@app/components/layout/back-link";
 import ProductLoadingSkeleton from "@app/components/layout/product-loading-skeleton";
+import ProductSuggestion from "@app/components/layout/product-suggestion";
 
 type ProductDescription = {
   id: string;
@@ -26,6 +28,7 @@ type ProductDescription = {
 const Page = () => {
   const [productData, setProductData] = useState<ProductDescription[]>([]);
   const [earphonesData, setEarphonesData] = useState<ProductDescription[]>([]);
+  const randomizedProducts = GetRandomizedProducts(productData);
   const params = useParams();
   console.log(params);
 
@@ -61,6 +64,7 @@ const Page = () => {
           <GoBackLink link="/earphones" />
           {product && <ProductDetail key={product.id} {...product} />}
         </div>
+        <ProductSuggestion product={randomizedProducts} />
         <ProductLink />
         <AboutUs />
       </div>
