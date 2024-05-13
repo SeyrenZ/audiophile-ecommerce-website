@@ -14,6 +14,7 @@ import {
   FormMessage,
 } from "../ui/form";
 import { Input } from "../ui/input";
+import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -202,11 +203,44 @@ const CheckoutForm = () => {
                     control={form.control}
                     name="username"
                     render={({ field }) => (
+                      <FormItem className="row-span-2">
+                        <FormControl>
+                          <RadioGroup
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                            className="flex flex-col space-y-1"
+                          >
+                            <FormItem className="w-full h-[58px] px-4 bg-white border-[1px] border-primary-whiteSmoke rounded-lg flex items-center space-x-3 space-y-0">
+                              <FormControl>
+                                <RadioGroupItem value="" />
+                              </FormControl>
+                              <FormLabel className="text-[14px] font-bold">
+                                e-Money
+                              </FormLabel>
+                            </FormItem>
+                            <FormItem className="w-full h-[58px] px-4 bg-white border-[1px] border-primary-whiteSmoke rounded-lg flex items-center space-x-3 space-y-0">
+                              <FormControl>
+                                <RadioGroupItem value="" />
+                              </FormControl>
+                              <FormLabel className="text-[14px] font-bold">
+                                Cash On Delivery
+                              </FormLabel>
+                            </FormItem>
+                          </RadioGroup>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="username"
+                    render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Address</FormLabel>
+                        <FormLabel>e-Money Number</FormLabel>
                         <FormControl>
                           <Input
-                            placeholder="1137 Williams Avenue"
+                            placeholder="238521993"
                             {...field}
                             className="px-6 py-[28px] border-[1px] border-primary-whiteSmoke rounded-lg"
                           />
@@ -221,46 +255,10 @@ const CheckoutForm = () => {
                     name="username"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>ZIP Code</FormLabel>
+                        <FormLabel>e-Money PIN</FormLabel>
                         <FormControl>
                           <Input
-                            placeholder="10001"
-                            {...field}
-                            className="px-6 py-[28px] border-[1px] border-primary-whiteSmoke rounded-lg"
-                          />
-                        </FormControl>
-                        <FormDescription></FormDescription>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="username"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>City</FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="New York"
-                            {...field}
-                            className="px-6 py-[28px] border-[1px] border-primary-whiteSmoke rounded-lg"
-                          />
-                        </FormControl>
-                        <FormDescription></FormDescription>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="username"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Country</FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="United States"
+                            placeholder="6891"
                             {...field}
                             className="px-6 py-[28px] border-[1px] border-primary-whiteSmoke rounded-lg"
                           />
