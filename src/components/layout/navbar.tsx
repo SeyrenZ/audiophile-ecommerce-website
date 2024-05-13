@@ -32,16 +32,13 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, [isOpen]);
 
-  const handlePages =
-    pathname.startsWith("/headphones") ||
-    pathname.startsWith("/speakers") ||
-    pathname.startsWith("/earphones");
+  const handlePages = pathname === "/";
 
   return (
     <>
       <div
         className={`w-full h-auto z-50 ${
-          handlePages ? "bg-black static" : "bg-transparent absolute"
+          handlePages ? "bg-transparent absolute" : "bg-black static"
         } `}
       >
         <div
