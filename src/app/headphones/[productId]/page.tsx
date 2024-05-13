@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import { notFound } from "next/navigation";
-import { GetRandomizedProducts } from "@app/utils/product-utils";
+import { GetRandomizedProducts } from "@app/lib/product-utils";
 import ProductDetail from "@app/components/layout/product-detail";
 import AboutUs from "@app/components/layout/about-us";
 import ProductLink from "@app/components/layout/product-link";

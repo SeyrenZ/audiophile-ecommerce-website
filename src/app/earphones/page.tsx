@@ -14,7 +14,7 @@ const EarphonesCategory = () => {
     Aos.init();
   }, []);
   return (
-    <div className="sm:space-y-[160px] space-y-16 overflow-hidden">
+    <div className="sm:space-y-[160px] space-y-16 overflow-hidden pb-[200px]">
       <CategroryHeader title="EARPHONES" />
       <EarphonesProduct />
       <ProductLink />

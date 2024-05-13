@@ -12,7 +12,7 @@ export default function Home() {
     Aos.init();
   }, []);
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden pb-[200px]">
       <HomeHeader />
       <div className="pt-[120px] lg:space-y-[200px] sm:space-y-[96px] space-y-[120px]">
         <ProductLink />
