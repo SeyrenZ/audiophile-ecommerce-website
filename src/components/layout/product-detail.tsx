@@ -2,20 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import Link from "next/link";
-
-export interface ProductDescription {
-  name: string;
-  desc: string;
-  image: string;
-  subImage1: string;
-  subImage2: string;
-  subImage3: string;
-  features: string;
-  newProduct: string;
-  alt: string;
-  price: string;
-  itemsInBox: { quantity: number; unit: string }[];
-}
+import { ProductDescription } from "@app/lib/product-utils";
 
 const ProductDetail: React.FC<ProductDescription> = ({
   name,
@@ -45,11 +32,12 @@ const ProductDetail: React.FC<ProductDescription> = ({
           </div>
           <div className="lg:w-[445px] sm:w-[572px] w-full h-auto flex flex-col items-start sm:gap-y-4 gap-y-6">
             <div
-              className={`text-sm font-medium text-primary-copper tracking-[10px] ${newProduct}`}
+              className={`text-sm font-medium text-primary-copper tracking-[10px] ${
+                newProduct == true ? "block" : "hidden"
+              } `}
             >
               NEW PRODUCT
             </div>
-
             <div className="w-[296px] text-black font-bold lg:text-[40px] text-[28px] lg:leading-[44px] leading-[32px] tracking-[1.43px] text-left">
               {name}
             </div>

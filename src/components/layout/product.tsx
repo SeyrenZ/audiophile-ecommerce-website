@@ -1,18 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { ProductDescription } from "@app/lib/product-utils";
 
-interface ProductDescription {
-  name: string;
-  desc: string;
-  image: string;
-  newProduct: string;
+interface ProductPosition {
   animation: string;
   position: string;
-  id: string;
 }
 
-const Product: React.FC<ProductDescription> = ({
+const Product: React.FC<ProductDescription & ProductPosition> = ({
   name,
   desc,
   image,
@@ -42,11 +38,12 @@ const Product: React.FC<ProductDescription> = ({
           </div>
           <div className="lg:w-[445px] sm:w-[572px] w-full h-auto flex flex-col lg:items-start items-center gap-y-4 order-1">
             <div
-              className={`text-sm font-medium text-primary-copper tracking-[10px] ${newProduct}`}
+              className={`text-sm font-medium text-primary-copper tracking-[10px] ${
+                newProduct == true ? "block" : "hidden"
+              } `}
             >
               NEW PRODUCT
             </div>
-
             <div className="w-[296px] sm:mt-0 mt-1.5 text-black font-bold sm:text-[40px] text-[28px] sm:leading-[44px] tracking-[1.43px] lg:text-left text-center">
               {name}
             </div>

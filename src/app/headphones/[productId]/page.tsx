@@ -9,22 +9,7 @@ import ProductLink from "@app/components/layout/product-link";
 import GoBackLink from "@app/components/layout/back-link";
 import ProductLoadingSkeleton from "@app/components/layout/product-loading-skeleton";
 import ProductSuggestion from "@app/components/layout/product-suggestion";
-
-type ProductDescription = {
-  id: string;
-  category: string;
-  name: string;
-  desc: string;
-  image: string;
-  subImage1: string;
-  subImage2: string;
-  subImage3: string;
-  features: string;
-  newProduct: string;
-  alt: string;
-  price: string;
-  itemsInBox: { quantity: number; unit: string }[];
-};
+import { ProductDescription } from "@app/lib/product-utils";
 
 const Page = () => {
   const [productData, setProductData] = useState<ProductDescription[]>([]);

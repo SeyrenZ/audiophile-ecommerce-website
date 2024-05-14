@@ -1,16 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
-interface Product {
-  name: string;
-  id: string;
-  image: string;
-  category: string;
-}
+import { ProductDescription } from "@app/lib/product-utils";
 
 export interface SuggestionData {
-  product: Product[];
+  product: ProductDescription[];
 }
 
 const ProductSuggestion: React.FC<SuggestionData> = ({ product }) => {

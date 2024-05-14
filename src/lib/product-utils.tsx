@@ -1,7 +1,7 @@
 "use client";
 import { useParams } from "next/navigation";
 
-type ProductDescription = {
+export type ProductDescription = {
   id: string;
   category: string;
   name: string;
@@ -11,7 +11,7 @@ type ProductDescription = {
   subImage2: string;
   subImage3: string;
   features: string;
-  newProduct: string;
+  newProduct: boolean;
   alt: string;
   price: string;
   itemsInBox: { quantity: number; unit: string }[];
