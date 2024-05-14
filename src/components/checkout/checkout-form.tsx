@@ -17,8 +17,33 @@ import { Input } from "../ui/input";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 
 const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+  name: z.string().min(2, {
+    message: "Name must be at least 2 characters.",
+  }),
+  email: z.string().email("Invalid email address."),
+  phoneNumber: z.number().min(10, {
+    message: "Phone number must be at least 10 characters.",
+  }),
+  address: z.string().min(2, {
+    message: "Address must be at least 2 characters.",
+  }),
+  city: z.string().min(2, {
+    message: "City must be at least 2 characters.",
+  }),
+  country: z.string().min(2, {
+    message: "Country must be at least 2 characters.",
+  }),
+  zipCode: z.number().min(5, {
+    message: "ZIP Code must be at least 5 characters.",
+  }),
+  eMoneyPin: z.number().min(2, {
+    message: "eMoney Pin must be at least 2 characters.",
+  }),
+  eMoneyNumber: z.number().min(2, {
+    message: "eMoney Number must be at least 2 characters.",
+  }),
+  paymentMethod: z.enum(["e-Money", "Cash On Delivery"], {
+    message: "You need to select a payment method.",
   }),
 });
 
@@ -33,7 +58,15 @@ const CheckoutForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      name: "",
+      email: "",
+      phoneNumber: undefined,
+      address: "",
+      city: "",
+      country: "",
+      zipCode: undefined,
+      eMoneyPin: undefined,
+      eMoneyNumber: undefined,
     },
   });
 
@@ -56,55 +89,61 @@ const CheckoutForm = () => {
                 <div className="w-full grid grid-cols-2 gap-x-4 gap-y-6">
                   <FormField
                     control={form.control}
-                    name="username"
+                    name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Name</FormLabel>
+                        <div className="flex items-center justify-between">
+                          <FormLabel>Name</FormLabel>
+                          <FormMessage className="text-xs font-thin" />
+                        </div>
                         <FormControl>
                           <Input
                             placeholder="Alexai Ward"
                             {...field}
-                            className="px-6 py-[28px] border-[1px] border-primary-whiteSmoke rounded-lg"
+                            className="px-6 py-[28px] border-[1px] rounded-lg"
                           />
                         </FormControl>
                         <FormDescription></FormDescription>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
                   <FormField
                     control={form.control}
-                    name="username"
+                    name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email Address</FormLabel>
+                        <div className="flex items-center justify-between">
+                          <FormLabel>Email</FormLabel>
+                          <FormMessage className="text-xs font-thin" />
+                        </div>
                         <FormControl>
                           <Input
                             placeholder="alexai@gmail.com"
                             {...field}
-                            className="px-6 py-[28px] border-[1px] border-primary-whiteSmoke rounded-lg"
+                            className="px-6 py-[28px] border-[1px] rounded-lg"
                           />
                         </FormControl>
                         <FormDescription></FormDescription>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
                   <FormField
                     control={form.control}
-                    name="username"
+                    name="phoneNumber"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Phone Number</FormLabel>
+                        <div className="flex items-center justify-between">
+                          <FormLabel>Phone Number</FormLabel>
+                          <FormMessage className="text-xs font-thin" />
+                        </div>
                         <FormControl>
                           <Input
                             placeholder="+1 202-555-0136"
                             {...field}
-                            className="px-6 py-[28px] border-[1px] border-primary-whiteSmoke rounded-lg"
+                            className="px-6 py-[28px] border-[1px] rounded-lg"
                           />
                         </FormControl>
                         <FormDescription></FormDescription>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -119,74 +158,82 @@ const CheckoutForm = () => {
                   <div className="col-span-2">
                     <FormField
                       control={form.control}
-                      name="username"
+                      name="address"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Address</FormLabel>
+                          <div className="flex items-center justify-between">
+                            <FormLabel>Address</FormLabel>
+                            <FormMessage className="text-xs font-thin" />
+                          </div>
                           <FormControl>
                             <Input
                               placeholder="1137 Williams Avenue"
                               {...field}
-                              className="px-6 py-[28px] border-[1px] border-primary-whiteSmoke rounded-lg"
+                              className="px-6 py-[28px] border-[1px] rounded-lg"
                             />
                           </FormControl>
                           <FormDescription></FormDescription>
-                          <FormMessage />
                         </FormItem>
                       )}
                     />
                   </div>
                   <FormField
                     control={form.control}
-                    name="username"
+                    name="zipCode"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>ZIP Code</FormLabel>
+                        <div className="flex items-center justify-between">
+                          <FormLabel>ZIP Code</FormLabel>
+                          <FormMessage className="text-xs font-thin" />
+                        </div>
                         <FormControl>
                           <Input
                             placeholder="10001"
                             {...field}
-                            className="px-6 py-[28px] border-[1px] border-primary-whiteSmoke rounded-lg"
+                            className="px-6 py-[28px] border-[1px] rounded-lg"
                           />
                         </FormControl>
                         <FormDescription></FormDescription>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
                   <FormField
                     control={form.control}
-                    name="username"
+                    name="city"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>City</FormLabel>
+                        <div className="flex items-center justify-between">
+                          <FormLabel>City</FormLabel>
+                          <FormMessage className="text-xs font-thin" />
+                        </div>
                         <FormControl>
                           <Input
                             placeholder="New York"
                             {...field}
-                            className="px-6 py-[28px] border-[1px] border-primary-whiteSmoke rounded-lg"
+                            className="px-6 py-[28px] border-[1px] rounded-lg"
                           />
                         </FormControl>
                         <FormDescription></FormDescription>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
                   <FormField
                     control={form.control}
-                    name="username"
+                    name="country"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Country</FormLabel>
+                        <div className="flex items-center justify-between">
+                          <FormLabel>Country</FormLabel>
+                          <FormMessage className="text-xs font-thin" />
+                        </div>
                         <FormControl>
                           <Input
                             placeholder="United States"
                             {...field}
-                            className="px-6 py-[28px] border-[1px] border-primary-whiteSmoke rounded-lg"
+                            className="px-6 py-[28px] border-[1px] rounded-lg"
                           />
                         </FormControl>
                         <FormDescription></FormDescription>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -201,7 +248,7 @@ const CheckoutForm = () => {
                   <div className="row-span-2">Payment method</div>
                   <FormField
                     control={form.control}
-                    name="username"
+                    name="paymentMethod"
                     render={({ field }) => (
                       <FormItem className="row-span-2">
                         <FormControl>
@@ -210,17 +257,17 @@ const CheckoutForm = () => {
                             defaultValue={field.value}
                             className="flex flex-col space-y-1"
                           >
-                            <FormItem className="w-full h-[58px] px-4 bg-white border-[1px] border-primary-whiteSmoke rounded-lg flex items-center space-x-3 space-y-0">
+                            <FormItem className="w-full h-[58px] px-4 bg-white border-[1px] border-zinc-300 rounded-lg flex items-center space-x-3 space-y-0">
                               <FormControl>
-                                <RadioGroupItem value="" />
+                                <RadioGroupItem value="e-money" />
                               </FormControl>
                               <FormLabel className="text-[14px] font-bold">
                                 e-Money
                               </FormLabel>
                             </FormItem>
-                            <FormItem className="w-full h-[58px] px-4 bg-white border-[1px] border-primary-whiteSmoke rounded-lg flex items-center space-x-3 space-y-0">
+                            <FormItem className="w-full h-[58px] px-4 bg-white border-[1px] border-zinc-300 rounded-lg flex items-center space-x-3 space-y-0">
                               <FormControl>
-                                <RadioGroupItem value="" />
+                                <RadioGroupItem value="cash-on-delivery" />
                               </FormControl>
                               <FormLabel className="text-[14px] font-bold">
                                 Cash On Delivery
@@ -228,48 +275,52 @@ const CheckoutForm = () => {
                             </FormItem>
                           </RadioGroup>
                         </FormControl>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
                   <FormField
                     control={form.control}
-                    name="username"
+                    name="eMoneyNumber"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>e-Money Number</FormLabel>
+                        <div className="flex items-center justify-between">
+                          <FormLabel>e-Money Number</FormLabel>
+                          <FormMessage className="text-xs font-thin" />
+                        </div>
                         <FormControl>
                           <Input
                             placeholder="238521993"
                             {...field}
-                            className="px-6 py-[28px] border-[1px] border-primary-whiteSmoke rounded-lg"
+                            className="px-6 py-[28px] border-[1px] rounded-lg"
                           />
                         </FormControl>
                         <FormDescription></FormDescription>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
                   <FormField
                     control={form.control}
-                    name="username"
+                    name="eMoneyPin"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>e-Money PIN</FormLabel>
+                        <div className="flex items-center justify-between">
+                          <FormLabel>e-Money PIN</FormLabel>
+                          <FormMessage className="text-xs font-thin" />
+                        </div>
                         <FormControl>
                           <Input
                             placeholder="6891"
                             {...field}
-                            className="px-6 py-[28px] border-[1px] border-primary-whiteSmoke rounded-lg"
+                            className="px-6 py-[28px] border-[1px] rounded-lg"
                           />
                         </FormControl>
                         <FormDescription></FormDescription>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
                 </div>
               </div>
+              <Button type="submit">Submit</Button>
             </form>
           </Form>
         </div>
