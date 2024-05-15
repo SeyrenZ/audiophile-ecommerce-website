@@ -74,14 +74,54 @@ const CheckoutForm = () => {
   const paymentMethods = form.watch("paymentMethod");
 
   return (
-    <div className="w-full h-full container">
+    <div className="w-full h-auto container">
       <div className="w-full h-full max-w-[1110px] mx-auto">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="w-full flex justify-between"
+            className="w-full h-auto flex justify-between"
           >
-            <div className="w-full max-w-[730px] h-auto min-h-[1126px] px-12 py-14 bg-white rounded-lg flex flex-col gap-y-[41px]">
+            <div className="order-2 w-full p-8 max-w-[350px] min-h-[385px] max-h-[612px] bg-white rounded-lg flex flex-col self-start gap-y-8">
+              <div className="text-lg font-bold tracking-[1.29px]">SUMMARY</div>
+              <div className="text-sm font-bold tracking-widest text-zinc-400 flex justify-center">
+                No items in cart
+              </div>
+              <div className="w-full flex flex-col gap-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="text-[15px] leading-[25px] font-medium text-zinc-500">
+                    TOTAL
+                  </div>
+                  <div className="text-lg font-bold text-black">$0.00</div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="text-[15px] leading-[25px] font-medium text-zinc-500">
+                    SHIPPING
+                  </div>
+                  <div className="text-lg font-bold text-black">$0.00</div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="text-[15px] leading-[25px] font-medium text-zinc-500">
+                    VAT (INCLUDED)
+                  </div>
+                  <div className="text-lg font-bold text-black">$0.00</div>
+                </div>
+                <div className="mt-4 flex items-center justify-between">
+                  <div className="text-[15px] leading-[25px] font-medium text-zinc-500">
+                    GRAND TOTAL
+                  </div>
+                  <div className="text-lg font-bold text-primary-copper">
+                    $0.00
+                  </div>
+                </div>
+              </div>
+              <Button
+                type="submit"
+                className="rounded-none h-[48px] bg-primary-copper hover:bg-primary-apricot"
+              >
+                CONTINUE & PAY
+              </Button>
+            </div>
+            <div className="order-1 w-full max-w-[730px] h-auto px-12 py-14 bg-white rounded-lg flex flex-col gap-y-[41px]">
               <div className="text-[32px] leading-[38px] font-bold tracking-[1.14px]">
                 CHECKOUT
               </div>
@@ -345,7 +385,6 @@ const CheckoutForm = () => {
                   )}
                 </div>
               </div>
-              <Button type="submit">Submit</Button>
             </div>
           </form>
         </Form>
