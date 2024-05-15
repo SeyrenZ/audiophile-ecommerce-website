@@ -6,7 +6,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div lang="en" className="bg-primary-whiteSmoke pb-[200px]">
+    <div
+      lang="en"
+      className="bg-primary-whiteSmoke lg:pb-[200px] sm:pb-[116px] pb-[96px]"
+    >
       {children}
     </div>
   );

@@ -79,9 +79,9 @@ const CheckoutForm = () => {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="w-full h-auto flex justify-between"
+            className="w-full h-auto flex lg:flex-row flex-col lg:justify-between lg:gap-y-0 gap-y-8"
           >
-            <div className="order-2 w-full p-8 max-w-[350px] min-h-[385px] max-h-[612px] bg-white rounded-lg flex flex-col self-start gap-y-8">
+            <div className="order-2 w-full sm;p-8 p-6 lg:max-w-[350px] min-h-[385px] max-h-[612px] bg-white rounded-lg flex flex-col self-start gap-y-8">
               <div className="text-lg font-bold tracking-[1.29px]">SUMMARY</div>
               <div className="text-sm font-bold tracking-widest text-zinc-400 flex justify-center">
                 No items in cart
@@ -121,7 +121,7 @@ const CheckoutForm = () => {
                 CONTINUE & PAY
               </Button>
             </div>
-            <div className="order-1 w-full max-w-[730px] h-auto px-12 py-14 bg-white rounded-lg flex flex-col gap-y-[41px]">
+            <div className="order-1 w-full lg:max-w-[730px] h-auto sm:px-12 px-6 sm:py-14 py-7 bg-white rounded-lg flex flex-col gap-y-[41px]">
               <div className="text-[32px] leading-[38px] font-bold tracking-[1.14px]">
                 CHECKOUT
               </div>
@@ -129,7 +129,7 @@ const CheckoutForm = () => {
                 <div className="text-[13px] leading-[25px] tracking-[0.93px] font-bold text-primary-copper">
                   BILLING DETAILS
                 </div>
-                <div className="w-full grid grid-cols-2 gap-x-4 gap-y-6">
+                <div className="w-full grid sm:grid-cols-2 grid-cols-1  gap-x-4 gap-y-6">
                   <FormField
                     control={form.control}
                     name="name"
@@ -203,8 +203,8 @@ const CheckoutForm = () => {
                 <div className="text-[13px] leading-[25px] tracking-[0.93px] font-bold text-primary-copper">
                   SHIPPING DETAILS
                 </div>
-                <div className="w-full grid grid-cols-2 gap-x-4 gap-y-6">
-                  <div className="col-span-2">
+                <div className="w-full grid sm:grid-cols-2 grid-cols-1 gap-x-4 gap-y-6">
+                  <div className="sm:col-span-2">
                     <FormField
                       control={form.control}
                       name="address"
@@ -301,7 +301,7 @@ const CheckoutForm = () => {
                 <div className="text-[13px] leading-[25px] tracking-[0.93px] font-bold text-primary-copper">
                   SHIPPING DETAILS
                 </div>
-                <div className="w-full grid grid-cols-2 gap-x-4 gap-y-6">
+                <div className="w-full grid sm:grid-cols-2 grid-cols-1 gap-x-4 gap-y-6">
                   <div className="row-span-2">Payment method</div>
                   <FormField
                     control={form.control}
