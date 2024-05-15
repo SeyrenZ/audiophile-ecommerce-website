@@ -14,6 +14,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           "flex h-10 w-full rounded-md border border-zinc-300 bg-background px-3 py-2 text-sm outline-primary-copper disabled:cursor-not-allowed disabled:opacity-50",
           className
         )}
+        autoComplete="off"
         ref={ref}
         {...props}
       />
