@@ -15,6 +15,8 @@ import {
 } from "../ui/form";
 import { Input } from "../ui/input";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
+import { useCart } from "@app/context/product-context";
+import Image from "next/image";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -36,11 +38,11 @@ const formSchema = z.object({
   zipCode: z.number().min(5, {
     message: "ZIP Code must be at least 5 characters.",
   }),
-  eMoneyPin: z.number().min(2, {
-    message: "eMoney Pin must be at least 2 characters.",
+  eMoneyPin: z.number().min(4, {
+    message: "invalid eMoney PIN",
   }),
-  eMoneyNumber: z.number().min(2, {
-    message: "eMoney Number must be at least 2 characters.",
+  eMoneyNumber: z.number().min(10, {
+    message: "invalid eMoney Number",
   }),
   paymentMethod: z.enum(["e-money", "cash-on-delivery"], {
     message: "You need to select a payment method.",
@@ -72,6 +74,9 @@ const CheckoutForm = () => {
   });
 
   const paymentMethods = form.watch("paymentMethod");
+  const { cart, removeFromCart } = useCart();
+  const isCartEmpty = cart.length === 0;
+  console.log(isCartEmpty);
 
   return (
     <div className="w-full h-auto container">
@@ -83,6 +88,33 @@ const CheckoutForm = () => {
           >
             <div className="order-2 w-full sm;p-8 p-6 lg:max-w-[350px] min-h-[385px] max-h-[612px] bg-white rounded-lg flex flex-col self-start gap-y-8">
               <div className="text-lg font-bold tracking-[1.29px]">SUMMARY</div>
+              <div className="w-full max-h-[226px] flex flex-col gap-y-6 overflow-scroll">
+                {cart.map((item, index) => (
+                  <div
+                    className="w-full flex items-center justify-between"
+                    key={index}
+                  >
+                    <div className="flex items-center gap-x-4">
+                      <div className="w-[64px] h-[64px] rounded-lg bg-primary-whiteSmoke flex items-center justify-center">
+                        <Image
+                          src={item.image}
+                          width={36}
+                          height={40}
+                          alt={item.id}
+                        />
+                      </div>
+                      <div className="flex flex-col">
+                        <div className="uppercase text-[15px] leading-[25px] font-bold text-black">
+                          {item.id}
+                        </div>
+                        <div className="text-[14px] leading-[25px] font-bold text-zinc-400">
+                          $ {item.price}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
               <div className="text-sm font-bold tracking-widest text-zinc-400 flex justify-center">
                 No items in cart
               </div>

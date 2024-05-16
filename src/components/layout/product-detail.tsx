@@ -3,20 +3,31 @@ import Image from "next/image";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import Link from "next/link";
 import { ProductDescription } from "@app/lib/product-utils";
+import { useCart } from "@app/context/product-context";
 
-const ProductDetail: React.FC<ProductDescription> = ({
-  name,
-  desc,
-  image,
-  subImage1,
-  subImage2,
-  subImage3,
-  features,
-  newProduct,
-  alt,
-  price,
-  itemsInBox,
-}) => {
+const ProductDetail: React.FC<ProductDescription> = (product) => {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    console.log(product);
+  };
+
+  const {
+    id,
+    name,
+    desc,
+    image,
+    subImage1,
+    subImage2,
+    subImage3,
+    features,
+    newProduct,
+    alt,
+    price,
+    itemsInBox,
+  } = product;
+
   return (
     <div className="w-full h-auto container">
       <div className="w-full max-w-[1110px] mx-auto flex flex-col items-start lg:gap-y-[160px] gap-y-[88px]">
@@ -57,7 +68,10 @@ const ProductDetail: React.FC<ProductDescription> = ({
                   <AiOutlinePlus />
                 </button>
               </div>
-              <button className="w-[160px] h-full bg-primary-copper hover:bg-primary-apricot text-xs font-bold tracking-[1px] text-white">
+              <button
+                onClick={handleAddToCart}
+                className="w-[160px] h-full bg-primary-copper hover:bg-primary-apricot text-xs font-bold tracking-[1px] text-white"
+              >
                 ADD TO CART
               </button>
             </div>
