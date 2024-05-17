@@ -75,7 +75,7 @@ const CheckoutForm = () => {
   });
 
   const paymentMethods = form.watch("paymentMethod");
-  const { cart, removeFromCart } = useCart();
+  const { cart, removeAllFromCart } = useCart();
   const isCartEmpty = cart.length === 0;
   console.log(isCartEmpty);
 

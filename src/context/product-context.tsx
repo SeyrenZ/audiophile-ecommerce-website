@@ -5,13 +5,13 @@ import { ProductDescription } from "@app/lib/product-utils";
 interface CartContextProps {
   cart: ProductDescription[];
   addToCart: (product: ProductDescription) => void;
-  removeFromCart: (productId: string) => void;
+  removeAllFromCart: () => void;
 }
 
 const CartContext = createContext<CartContextProps>({
   cart: [],
   addToCart: () => {},
-  removeFromCart: () => {},
+  removeAllFromCart: () => {},
 });
 
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
@@ -21,14 +21,12 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     setCart((prevCart: ProductDescription[]) => [...prevCart, product]);
   };
 
-  const removeFromCart = (productId: string) => {
-    setCart((prevCart: ProductDescription[]) =>
-      prevCart.filter((product) => product.id !== productId)
-    );
+  const removeAllFromCart = () => {
+    setCart([]);
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeAllFromCart }}>
       {children}
     </CartContext.Provider>
   );

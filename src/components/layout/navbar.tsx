@@ -5,6 +5,8 @@ import { CartIcon, Logo } from "../svg";
 import Link from "next/link";
 import { Squash as Hamburger } from "hamburger-react";
 import ProductLink from "./product-link";
+import CartModal from "./cart-modal";
+import { useCart } from "@app/context/product-context";
 
 const Navbar = () => {
   type Link = {
@@ -20,6 +22,8 @@ const Navbar = () => {
   ];
 
   const [isOpen, setOpen] = useState(false);
+  const [isCartOpen, setCartOpen] = useState(false);
+  const { cart } = useCart();
   const pathname = usePathname();
 
   useEffect(() => {
@@ -33,6 +37,7 @@ const Navbar = () => {
   }, [isOpen]);
 
   const handlePages = pathname === "/";
+  const cartItemCount = cart.length;
 
   return (
     <>
@@ -52,10 +57,13 @@ const Navbar = () => {
             <ProductLink />
           </div>
         </div>
-        {isOpen && (
+        {(isOpen || isCartOpen) && (
           <div
-            className="fixed inset-0 bg-black opacity-50 z-30 lg:hidden block"
-            onClick={() => setOpen(false)}
+            className={`fixed inset-0 bg-black opacity-50 z-30 block`}
+            onClick={() => {
+              setOpen(false);
+              setCartOpen(false);
+            }}
           />
         )}
         <nav
@@ -63,6 +71,7 @@ const Navbar = () => {
             isOpen ? "bg-black" : "bg-transparent"
           } mx-auto border-b-[1px] border-zinc-700 flex items-center justify-between relative z-40`}
         >
+          {isCartOpen && <CartModal />}
           <div className="block lg:hidden">
             <Hamburger
               toggled={isOpen}
@@ -89,7 +98,14 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-          <CartIcon />
+          <div className="relative">
+            <CartIcon onClick={() => setCartOpen(!isCartOpen)} />
+            {cartItemCount > 0 && (
+              <div className="ml-3 mt-[-5px] w-fit px-2 absolute bg-primary-copper rounded-md text-[10px] text-white flex items-center justify-center">
+                {cartItemCount}
+              </div>
+            )}
+          </div>
         </nav>
       </div>
     </>
