@@ -16,7 +16,7 @@ const CartModal = () => {
   );
 
   return (
-    <div className="absolute z-50 right-0 top-[129px] w-full max-w-[377px] h-auto max-h-[488px] p-8 bg-white rounded-lg flex flex-col gap-y-6">
+    <div className="absolute z-50 sm:right-10 right-0 sm:left-auto left-0 sm:mx-0 mx-auto top-[129px] w-full sm:max-w-[377px] max-w-[350px] h-auto max-h-[488px] p-8 bg-white rounded-lg flex flex-col gap-y-6">
       <div className="flex items-center justify-between">
         <div className="text-lg font-bold text-black trakcing-[1.29px]">
           Cart ({cart.length})
