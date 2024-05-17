@@ -5,7 +5,8 @@ import Image from "next/image";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
 const CartModal = () => {
-  const { cart, removeAllFromCart } = useCart();
+  const { cart, removeAllFromCart, increaseQuantity, decreaseQuantity } =
+    useCart();
   const isCartEmpty = cart.length === 0;
   console.log(isCartEmpty);
 
@@ -56,7 +57,23 @@ const CartModal = () => {
                 </div>
               </div>
             </div>
-            <div>{product.quantity}x</div>
+            <div className="w-[96px] h-[32px] bg-primary-whiteSmoke flex items-center justify-between">
+              <button
+                onClick={() => decreaseQuantity(product.id)}
+                className="text-[5px] p-[19px] font-bold text-black "
+              >
+                <AiOutlineMinus />
+              </button>
+              <div className="text-xs font-bold text-[#1d2025]">
+                {product.quantity}
+              </div>
+              <button
+                onClick={() => increaseQuantity(product.id)}
+                className="text-[10px] p-[19px] font-extrabold text-primary-copper"
+              >
+                <AiOutlinePlus />
+              </button>
+            </div>
           </div>
         ))}
       </div>
