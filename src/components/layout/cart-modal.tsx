@@ -2,13 +2,17 @@ import Link from "next/link";
 import React from "react";
 import { useCart } from "@app/context/product-context";
 import Image from "next/image";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
 const CartModal = () => {
   const { cart, removeAllFromCart } = useCart();
   const isCartEmpty = cart.length === 0;
   console.log(isCartEmpty);
 
-  const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+  const totalPrice = cart.reduce(
+    (total, product) => total + product.price * (product.quantity || 0),
+    0
+  );
 
   return (
     <div className="absolute z-50 right-0 top-[129px] w-full max-w-[377px] h-auto max-h-[488px] p-8 bg-white rounded-lg flex flex-col gap-y-6">
@@ -29,24 +33,30 @@ const CartModal = () => {
             No items in cart
           </div>
         )}
-        {cart.map((item, index) => (
+        {cart.map((product, index) => (
           <div className="w-full flex items-center justify-between" key={index}>
-            <div className="flex items-center gap-x-4">
+            <div className="flex products-center gap-x-4">
               <div className="w-[64px] h-[64px] rounded-lg bg-primary-whiteSmoke flex items-center justify-center">
-                <Image src={item.image} width={36} height={40} alt={item.id} />
+                <Image
+                  src={product.image}
+                  width={36}
+                  height={40}
+                  alt={product.id}
+                />
               </div>
               <div className="flex flex-col">
                 <div className="uppercase text-[15px] leading-[25px] font-bold text-black">
-                  {item.id}
+                  {product.id}
                 </div>
                 <div className="text-[14px] leading-[25px] font-bold text-zinc-400">
-                  {item.price.toLocaleString("en-US", {
+                  {product.price.toLocaleString("en-US", {
                     style: "currency",
                     currency: "USD",
                   })}
                 </div>
               </div>
             </div>
+            <div>{product.quantity}x</div>
           </div>
         ))}
       </div>
@@ -54,7 +64,12 @@ const CartModal = () => {
         <div className="text-[15px] leading-[25px] font-medium text-zinc-500">
           TOTAL
         </div>
-        <div className="text-lg font-bold text-black">$0.00</div>
+        <div className="text-lg font-bold text-black">
+          {totalPrice.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+          })}
+        </div>
       </div>
       <Link
         href="/checkout"

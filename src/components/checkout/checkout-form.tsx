@@ -79,7 +79,10 @@ const CheckoutForm = () => {
   const isCartEmpty = cart.length === 0;
   console.log(isCartEmpty);
 
-  const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+  const totalPrice = cart.reduce(
+    (total, product) => total + product.price * (product.quantity || 0),
+    0
+  );
 
   return (
     <div className="w-full h-auto container">
@@ -97,7 +100,7 @@ const CheckoutForm = () => {
                     No items in cart
                   </div>
                 )}
-                {cart.map((item, index) => (
+                {cart.map((product, index) => (
                   <div
                     className="w-full flex items-center justify-between"
                     key={index}
@@ -105,24 +108,25 @@ const CheckoutForm = () => {
                     <div className="flex items-center gap-x-4">
                       <div className="w-[64px] h-[64px] rounded-lg bg-primary-whiteSmoke flex items-center justify-center">
                         <Image
-                          src={item.image}
+                          src={product.image}
                           width={36}
                           height={40}
-                          alt={item.id}
+                          alt={product.id}
                         />
                       </div>
                       <div className="flex flex-col">
                         <div className="uppercase text-[15px] leading-[25px] font-bold text-black">
-                          {item.id}
+                          {product.id}
                         </div>
                         <div className="text-[14px] leading-[25px] font-bold text-zinc-400">
-                          {item.price.toLocaleString("en-US", {
+                          {product.price.toLocaleString("en-US", {
                             style: "currency",
                             currency: "USD",
                           })}
                         </div>
                       </div>
                     </div>
+                    <div>{product.quantity}x</div>
                   </div>
                 ))}
               </div>
@@ -133,7 +137,10 @@ const CheckoutForm = () => {
                     TOTAL
                   </div>
                   <div className="text-lg font-bold text-black">
-                    ${totalPrice.toFixed(2)}
+                    {totalPrice.toLocaleString("en-US", {
+                      style: "currency",
+                      currency: "USD",
+                    })}
                   </div>
                 </div>
                 <div className="flex items-center justify-between">

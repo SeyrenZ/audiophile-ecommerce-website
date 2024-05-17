@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import Link from "next/link";
@@ -7,9 +8,18 @@ import { useCart } from "@app/context/product-context";
 
 const ProductDetail: React.FC<ProductDescription> = (product) => {
   const { addToCart } = useCart();
+  const [quantity, setQuantity] = useState(1);
+
+  const increment = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const decrement = () => {
+    setQuantity((prevQuantity) => (prevQuantity > 0 ? prevQuantity - 1 : 0));
+  };
 
   const handleAddToCart = () => {
-    addToCart(product);
+    addToCart(product, quantity);
     console.log(product);
   };
 
@@ -63,11 +73,19 @@ const ProductDetail: React.FC<ProductDescription> = (product) => {
             </div>
             <div className="lg:mt-8 sm:mt-4 mt-2 w-full h-[48px] flex items-center gap-x-5">
               <div className="w-[120px] h-full bg-primary-whiteSmoke flex items-center justify-between">
-                <button className="text-[5px] p-[19px] font-bold text-black ">
+                <button
+                  onClick={decrement}
+                  className="text-[5px] p-[19px] font-bold text-black "
+                >
                   <AiOutlineMinus />
                 </button>
-                <div className="text-xs font-bold text-[#1d2025]">1</div>
-                <button className="text-[10px] p-[19px] font-extrabold text-primary-copper">
+                <div className="text-xs font-bold text-[#1d2025]">
+                  {quantity}
+                </div>
+                <button
+                  onClick={increment}
+                  className="text-[10px] p-[19px] font-extrabold text-primary-copper"
+                >
                   <AiOutlinePlus />
                 </button>
               </div>

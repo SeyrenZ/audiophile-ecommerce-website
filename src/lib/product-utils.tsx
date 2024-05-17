@@ -15,6 +15,7 @@ export type ProductDescription = {
   alt: string;
   price: number;
   itemsInBox: { quantity: number; unit: string }[];
+  quantity?: number;
 };
 
 const ShuffleProduct = (array: ProductDescription[]): ProductDescription[] => {
