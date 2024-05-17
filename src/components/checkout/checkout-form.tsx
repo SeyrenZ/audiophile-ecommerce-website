@@ -17,6 +17,7 @@ import { Input } from "../ui/input";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { useCart } from "@app/context/product-context";
 import Image from "next/image";
+import { ProductDescription } from "@app/lib/product-utils";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -78,6 +79,8 @@ const CheckoutForm = () => {
   const isCartEmpty = cart.length === 0;
   console.log(isCartEmpty);
 
+  const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+
   return (
     <div className="w-full h-auto container">
       <div className="w-full h-full max-w-[1110px] mx-auto">
@@ -89,6 +92,11 @@ const CheckoutForm = () => {
             <div className="order-2 w-full sm;p-8 p-6 lg:max-w-[350px] min-h-[385px] max-h-[612px] bg-white rounded-lg flex flex-col self-start gap-y-8">
               <div className="text-lg font-bold tracking-[1.29px]">SUMMARY</div>
               <div className="w-full max-h-[226px] flex flex-col gap-y-6 overflow-scroll">
+                {isCartEmpty && (
+                  <div className="text-sm font-bold tracking-widest text-zinc-400 flex justify-center">
+                    No items in cart
+                  </div>
+                )}
                 {cart.map((item, index) => (
                   <div
                     className="w-full flex items-center justify-between"
@@ -108,22 +116,25 @@ const CheckoutForm = () => {
                           {item.id}
                         </div>
                         <div className="text-[14px] leading-[25px] font-bold text-zinc-400">
-                          $ {item.price}
+                          {item.price.toLocaleString("en-US", {
+                            style: "currency",
+                            currency: "USD",
+                          })}
                         </div>
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="text-sm font-bold tracking-widest text-zinc-400 flex justify-center">
-                No items in cart
-              </div>
+
               <div className="w-full flex flex-col gap-y-2">
                 <div className="flex items-center justify-between">
                   <div className="text-[15px] leading-[25px] font-medium text-zinc-500">
                     TOTAL
                   </div>
-                  <div className="text-lg font-bold text-black">$0.00</div>
+                  <div className="text-lg font-bold text-black">
+                    ${totalPrice.toFixed(2)}
+                  </div>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="text-[15px] leading-[25px] font-medium text-zinc-500">

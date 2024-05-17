@@ -13,7 +13,7 @@ export type ProductDescription = {
   features: string;
   newProduct: boolean;
   alt: string;
-  price: string;
+  price: number;
   itemsInBox: { quantity: number; unit: string }[];
 };
 
