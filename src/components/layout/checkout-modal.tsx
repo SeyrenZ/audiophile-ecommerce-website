@@ -28,7 +28,7 @@ const CheckoutModal = () => {
         </div>
       </div>
       <div className="w-full h-auto flex sm:flex-row flex-col">
-        <div className="w-full sm:max-w-[246px] p-4 sm:rounded-l-lg rounded-t-lg bg-primary-whiteSmoke flex flex-col gap-y-3">
+        <div className="w-full sm:max-w-[246px] p-4 sm:rounded-l-lg sm:rounded-t-none rounded-t-lg bg-primary-whiteSmoke flex flex-col gap-y-3">
           {showAll
             ? cart.map((product, index) => (
                 <div
@@ -109,7 +109,7 @@ const CheckoutModal = () => {
               </button>
             ))}
         </div>
-        <div className="w-full sm:max-w-[198px] p-8 sm:rounded-r-lg rounded-b-lg bg-black flex flex-col items-start justify-center gap-y-2">
+        <div className="w-full sm:max-w-[198px] p-8 sm:rounded-r-lg sm:rounded-b-none rounded-b-lg bg-black flex flex-col items-start justify-center gap-y-2">
           <div className="text-[15px] leading-[25px] font-medium text-zinc-500">
             GRAND TOTAL
           </div>
