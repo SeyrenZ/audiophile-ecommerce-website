@@ -5,15 +5,15 @@ import Image from "next/image";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
 const CartModal = () => {
-  const { cart, removeAllFromCart, increaseQuantity, decreaseQuantity } =
-    useCart();
+  const {
+    cart,
+    removeAllFromCart,
+    increaseQuantity,
+    decreaseQuantity,
+    calculateTotalPrice,
+  } = useCart();
   const isCartEmpty = cart.length === 0;
   console.log(isCartEmpty);
-
-  const totalPrice = cart.reduce(
-    (total, product) => total + product.price * (product.quantity || 0),
-    0
-  );
 
   return (
     <div className="absolute z-50 sm:right-10 right-0 sm:left-auto left-0 sm:mx-0 mx-auto top-[129px] w-full sm:max-w-[377px] max-w-[350px] h-auto max-h-[488px] p-8 bg-white rounded-lg flex flex-col gap-y-6">
@@ -82,7 +82,7 @@ const CartModal = () => {
           TOTAL
         </div>
         <div className="text-lg font-bold text-black">
-          {totalPrice.toLocaleString("en-US", {
+          {calculateTotalPrice().toLocaleString("en-US", {
             style: "currency",
             currency: "USD",
           })}

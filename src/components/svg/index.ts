@@ -9,3 +9,4 @@ export { default as ArrowRight } from "./arrow-right.svg";
 export { default as FacebookIcon } from "./facebook-icon.svg";
 export { default as TwitterIcon } from "./twitter-icon.svg";
 export { default as InstagramIcon } from "./instagram-icon.svg";
+export { default as ChecklistIcon } from "./checklist-icon.svg";

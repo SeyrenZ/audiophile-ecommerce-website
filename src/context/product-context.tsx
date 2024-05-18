@@ -8,6 +8,10 @@ interface CartContextProps {
   removeAllFromCart: () => void;
   increaseQuantity: (productId: string) => void;
   decreaseQuantity: (productId: string) => void;
+  calculateTotalPrice: () => number;
+  calculateGrandTotal: () => number;
+  calculateProductVat: () => number;
+  shippingCost: number;
 }
 
 const CartContext = createContext<CartContextProps>({
@@ -16,10 +20,36 @@ const CartContext = createContext<CartContextProps>({
   removeAllFromCart: () => {},
   increaseQuantity: () => {},
   decreaseQuantity: () => {},
+  calculateTotalPrice: () => 0,
+  calculateGrandTotal: () => 0,
+  calculateProductVat: () => 0,
+  shippingCost: 0,
 });
 
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [cart, setCart] = useState<ProductDescription[]>([]);
+  const shippingCost = 50;
+  const productVat = 0.2;
+
+  const calculateTotalPrice = () => {
+    let totalPrice = 0;
+    for (let product of cart) {
+      totalPrice += product.price * (product.quantity || 0);
+    }
+    return totalPrice;
+  };
+
+  const calculateProductVat = () => {
+    const totalPrice = calculateTotalPrice();
+    return totalPrice * productVat;
+  };
+
+  const calculateGrandTotal = () => {
+    const totalPrice = calculateTotalPrice();
+    const vat = calculateProductVat();
+    const grandTotal = totalPrice + vat + shippingCost;
+    return grandTotal;
+  };
 
   const addToCart = (product: ProductDescription, quantity: number) => {
     setCart((prevCart: ProductDescription[]) => {
@@ -76,7 +106,6 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const removeAllFromCart = () => {
     setCart([]);
   };
-
   return (
     <CartContext.Provider
       value={{
@@ -85,6 +114,10 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         removeAllFromCart,
         increaseQuantity,
         decreaseQuantity,
+        calculateTotalPrice,
+        calculateGrandTotal,
+        calculateProductVat,
+        shippingCost,
       }}
     >
       {children}

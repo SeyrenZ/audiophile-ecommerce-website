@@ -17,7 +17,7 @@ import { Input } from "../ui/input";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { useCart } from "@app/context/product-context";
 import Image from "next/image";
-import { ProductDescription } from "@app/lib/product-utils";
+import CheckoutModal from "../layout/checkout-modal";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -75,17 +75,20 @@ const CheckoutForm = () => {
   });
 
   const paymentMethods = form.watch("paymentMethod");
-  const { cart, removeAllFromCart } = useCart();
+  const {
+    cart,
+    calculateGrandTotal,
+    calculateTotalPrice,
+    calculateProductVat,
+    shippingCost,
+  } = useCart();
   const isCartEmpty = cart.length === 0;
   console.log(isCartEmpty);
 
-  const totalPrice = cart.reduce(
-    (total, product) => total + product.price * (product.quantity || 0),
-    0
-  );
-
   return (
     <div className="w-full h-auto container">
+      <div className="fixed inset-0 bg-black opacity-50 z-30 block" />
+      <CheckoutModal />
       <div className="w-full h-full max-w-[1110px] mx-auto">
         <Form {...form}>
           <form
@@ -137,7 +140,7 @@ const CheckoutForm = () => {
                     TOTAL
                   </div>
                   <div className="text-lg font-bold text-black">
-                    {totalPrice.toLocaleString("en-US", {
+                    {calculateTotalPrice().toLocaleString("en-US", {
                       style: "currency",
                       currency: "USD",
                     })}
@@ -147,20 +150,33 @@ const CheckoutForm = () => {
                   <div className="text-[15px] leading-[25px] font-medium text-zinc-500">
                     SHIPPING
                   </div>
-                  <div className="text-lg font-bold text-black">$0.00</div>
+                  <div className="text-lg font-bold text-black">
+                    {shippingCost.toLocaleString("en-US", {
+                      style: "currency",
+                      currency: "USD",
+                    })}
+                  </div>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="text-[15px] leading-[25px] font-medium text-zinc-500">
                     VAT (INCLUDED)
                   </div>
-                  <div className="text-lg font-bold text-black">$0.00</div>
+                  <div className="text-lg font-bold text-black">
+                    {calculateProductVat().toLocaleString("en-US", {
+                      style: "currency",
+                      currency: "USD",
+                    })}
+                  </div>
                 </div>
                 <div className="mt-4 flex items-center justify-between">
                   <div className="text-[15px] leading-[25px] font-medium text-zinc-500">
                     GRAND TOTAL
                   </div>
                   <div className="text-lg font-bold text-primary-copper">
-                    $0.00
+                    {calculateGrandTotal().toLocaleString("en-US", {
+                      style: "currency",
+                      currency: "USD",
+                    })}
                   </div>
                 </div>
               </div>

@@ -36,6 +36,12 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, [isOpen]);
 
+  useEffect(() => {
+    if (pathname === "/checkout") {
+      setCartOpen(false);
+    }
+  }, [pathname]);
+
   const handlePages = pathname === "/";
   const cartItemCount = cart.length;
 
