@@ -43,7 +43,10 @@ const Navbar = () => {
   }, [pathname]);
 
   const handlePages = pathname === "/";
-  const cartItemCount = cart.length;
+  const cartItemCount = cart.reduce(
+    (total, product) => total + (product.quantity || 0),
+    0
+  );
 
   return (
     <>

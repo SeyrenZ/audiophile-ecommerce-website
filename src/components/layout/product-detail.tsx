@@ -5,6 +5,7 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import Link from "next/link";
 import { ProductDescription } from "@app/lib/product-utils";
 import { useCart } from "@app/context/product-context";
+import { Toaster, toast } from "sonner";
 
 const ProductDetail: React.FC<ProductDescription> = (product) => {
   const { addToCart } = useCart();
@@ -40,6 +41,19 @@ const ProductDetail: React.FC<ProductDescription> = (product) => {
   return (
     <div className="w-full h-auto container">
       <div className="w-full max-w-[1110px] mx-auto flex flex-col items-start lg:gap-y-[160px] gap-y-[88px]">
+        <div className="absolute">
+          <Toaster
+            position="bottom-right"
+            toastOptions={{
+              style: {
+                border: "none",
+                color: "#FFFFFF",
+                background: "#D87D4A",
+              },
+              className: "class",
+            }}
+          />
+        </div>
         <div className="w-full h-auto flex sm:flex-row flex-col items-center lg:justify-between gap-x-[69px] gap-y-8">
           <div className="w-full max-w-[540px] lg:h-[560px] sm:h-[480px] h-[327px] rounded-lg bg-primary-whiteSmoke flex items-center justify-center group">
             <Image
@@ -89,7 +103,12 @@ const ProductDetail: React.FC<ProductDescription> = (product) => {
                 </button>
               </div>
               <button
-                onClick={handleAddToCart}
+                onClick={() => {
+                  handleAddToCart();
+                  toast.success(`Added ${product.name} to your cart`, {
+                    duration: 1500,
+                  });
+                }}
                 className="w-[160px] h-full bg-primary-copper hover:bg-primary-apricot text-xs font-bold tracking-[1px] text-white"
               >
                 ADD TO CART
