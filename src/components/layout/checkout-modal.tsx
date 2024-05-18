@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const CheckoutModal = () => {
-  const { cart, calculateGrandTotal } = useCart();
+  const { cart, calculateGrandTotal, removeAllFromCart } = useCart();
   const [showAll, setShowAll] = useState(false);
 
   return (
@@ -92,21 +92,22 @@ const CheckoutModal = () => {
                   </div>
                 </div>
               ))}
-          {showAll ? (
-            <button
-              className="w-full border-t-[1px] pt-3 border-zinc-400 text-[12px] font-bold text-zinc-500"
-              onClick={() => setShowAll(false)}
-            >
-              View less
-            </button>
-          ) : (
-            <button
-              className="w-full border-t-[1px] pt-3 border-zinc-400 text-[12px] font-bold text-zinc-500"
-              onClick={() => setShowAll(true)}
-            >
-              See Other {cart.length} item(s)
-            </button>
-          )}
+          {cart.length > 1 &&
+            (showAll ? (
+              <button
+                className="w-full border-t-[1px] pt-3 border-zinc-400 text-[12px] font-bold text-zinc-500"
+                onClick={() => setShowAll(false)}
+              >
+                View less
+              </button>
+            ) : (
+              <button
+                className="w-full border-t-[1px] pt-3 border-zinc-400 text-[12px] font-bold text-zinc-500"
+                onClick={() => setShowAll(true)}
+              >
+                See Other {cart.length} item(s)
+              </button>
+            ))}
         </div>
         <div className="w-full sm:max-w-[198px] p-8 sm:rounded-r-lg rounded-b-lg bg-black flex flex-col items-start justify-center gap-y-2">
           <div className="text-[15px] leading-[25px] font-medium text-zinc-500">
@@ -121,6 +122,7 @@ const CheckoutModal = () => {
         </div>
       </div>
       <Link
+        onClick={removeAllFromCart}
         href="/"
         className="w-full h-[48px] bg-primary-copper hover:bg-primary-apricot text-white text-[13px] font-bold tracking-[1px] flex items-center justify-center"
       >

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -19,42 +19,67 @@ import { useCart } from "@app/context/product-context";
 import Image from "next/image";
 import CheckoutModal from "../layout/checkout-modal";
 
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "Name must be at least 2 characters.",
-  }),
-  email: z.string().email("Invalid email address."),
-  phoneNumber: z.number().min(10, {
-    message: "Phone number must be at least 10 characters.",
-  }),
-  address: z.string().min(2, {
-    message: "Address must be at least 2 characters.",
-  }),
-  city: z.string().min(2, {
-    message: "City must be at least 2 characters.",
-  }),
-  country: z.string().min(2, {
-    message: "Country must be at least 2 characters.",
-  }),
-  zipCode: z.number().min(5, {
-    message: "ZIP Code must be at least 5 characters.",
-  }),
-  eMoneyPin: z.number().min(4, {
-    message: "invalid eMoney PIN",
-  }),
-  eMoneyNumber: z.number().min(10, {
-    message: "invalid eMoney Number",
-  }),
-  paymentMethod: z.enum(["e-money", "cash-on-delivery"], {
-    message: "You need to select a payment method.",
-  }),
-});
+const formSchema = z
+  .object({
+    name: z.string().min(2, {
+      message: "Name must be at least 2 characters.",
+    }),
+    email: z.string().email("Invalid email address."),
+    phoneNumber: z.string().min(10, {
+      message: "Phone number must be at least 10 characters.",
+    }),
+    address: z.string().min(2, {
+      message: "Address must be at least 2 characters.",
+    }),
+    city: z.string().min(2, {
+      message: "City must be at least 2 characters.",
+    }),
+    country: z.string().min(2, {
+      message: "Country must be at least 2 characters.",
+    }),
+    zipCode: z.string().min(5, {
+      message: "ZIP Code must be at least 5 characters.",
+    }),
+    eMoneyPin: z
+      .string()
+      .min(4, {
+        message: "invalid eMoney PIN",
+      })
+      .optional(),
+    eMoneyNumber: z
+      .string()
+      .min(10, {
+        message: "invalid eMoney Number",
+      })
+      .optional(),
+    paymentMethod: z.enum(["e-money", "cash-on-delivery"], {
+      message: "You need to select a payment method.",
+    }),
+  })
+  .refine(
+    (data) => {
+      if (data.paymentMethod === "e-money") {
+        return data.eMoneyPin && data.eMoneyNumber;
+      }
+      return true;
+    },
+    {
+      message:
+        "eMoney Pin and eMoney Number are required for e-money payment method",
+      path: ["eMoneyPin", "eMoneyNumber"],
+    }
+  );
 
-// 2. Define a submit handler.
-function onSubmit(values: z.infer<typeof formSchema>) {
-  // Do something with the form values.
-  // ✅ This will be type-safe and validated.
+export function onSubmit(
+  values: z.infer<typeof formSchema>,
+  setIsModalOpen: (isModalOpen: boolean) => void
+) {
+  if (values.paymentMethod === "cash-on-delivery") {
+    values.eMoneyNumber = "";
+    values.eMoneyPin = "";
+  }
   console.log(values);
+  setIsModalOpen(true);
 }
 
 const CheckoutForm = () => {
@@ -74,6 +99,7 @@ const CheckoutForm = () => {
     },
   });
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const paymentMethods = form.watch("paymentMethod");
   const {
     cart,
@@ -83,16 +109,21 @@ const CheckoutForm = () => {
     shippingCost,
   } = useCart();
   const isCartEmpty = cart.length === 0;
-  console.log(isCartEmpty);
 
   return (
     <div className="w-full h-auto container">
-      <div className="fixed inset-0 bg-black opacity-50 z-30 block" />
-      <CheckoutModal />
+      <div
+        className={`fixed inset-0 bg-black opacity-50 z-30 ${
+          isModalOpen ? "block" : "hidden"
+        } `}
+      />
+      {isModalOpen && <CheckoutModal />}
       <div className="w-full h-full max-w-[1110px] mx-auto">
         <Form {...form}>
           <form
-            onSubmit={form.handleSubmit(onSubmit)}
+            onSubmit={form.handleSubmit((data) =>
+              onSubmit(data, setIsModalOpen)
+            )}
             className="w-full h-auto flex lg:flex-row flex-col lg:justify-between lg:gap-y-0 gap-y-8"
           >
             <div className="order-2 w-full sm;p-8 p-6 lg:max-w-[350px] min-h-[385px] max-h-[612px] bg-white rounded-lg flex flex-col self-start gap-y-8">

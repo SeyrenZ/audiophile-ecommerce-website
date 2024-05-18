@@ -15,7 +15,6 @@ const Page = () => {
   const [earphonesData, setEarphonesData] = useState<ProductDescription[]>([]);
   const randomizedProducts = GetRandomizedProducts(productData);
   const params = useParams();
-  console.log(params);
 
   useEffect(() => {
     const fetchData = async () => {

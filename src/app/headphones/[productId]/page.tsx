@@ -18,7 +18,6 @@ const Page = () => {
   );
   const randomizedProducts = GetRandomizedProducts(productData);
   const params = useParams();
-  console.log(params);
 
   useEffect(() => {
     const fetchData = async () => {

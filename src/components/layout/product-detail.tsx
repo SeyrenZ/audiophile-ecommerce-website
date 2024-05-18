@@ -20,7 +20,6 @@ const ProductDetail: React.FC<ProductDescription> = (product) => {
 
   const handleAddToCart = () => {
     addToCart(product, quantity);
-    console.log(product);
   };
 
   const {
