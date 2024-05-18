@@ -114,8 +114,8 @@ const CheckoutForm = () => {
     <div className="w-full h-auto container">
       <div
         className={`fixed inset-0 bg-black opacity-50 z-30 ${
-          isModalOpen ? "block" : "hidden"
-        } `}
+          isModalOpen ? "visible" : "invisible"
+        } transition ease-in-out duration-700 `}
       />
       {isModalOpen && <CheckoutModal />}
       <div className="w-full h-full max-w-[1110px] mx-auto">
