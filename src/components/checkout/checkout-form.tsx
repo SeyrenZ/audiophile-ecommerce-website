@@ -212,8 +212,17 @@ const CheckoutForm = () => {
                 </div>
               </div>
               <Button
+                onClick={(e) => {
+                  if (isCartEmpty) {
+                    e.preventDefault();
+                  }
+                }}
                 type="submit"
-                className="rounded-none h-[48px] bg-primary-copper hover:bg-primary-apricot"
+                className={`rounded-none h-[48px] ${
+                  isCartEmpty
+                    ? "bg-primary-apricot cursor-not-allowed"
+                    : "bg-primary-copper"
+                } hover:bg-primary-apricot`}
               >
                 CONTINUE & PAY
               </Button>
